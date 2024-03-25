@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/SuminInCanadaFE/static/css/main.39c86118.css",
-    "main.js": "/SuminInCanadaFE/static/js/main.8140c8c1.js",
+    "main.js": "/SuminInCanadaFE/static/js/main.c622c0db.js",
     "static/media/closeButton.png": "/SuminInCanadaFE/static/media/closeButton.3fd8e0e67f88566298d4.png",
     "index.html": "/SuminInCanadaFE/index.html",
     "main.39c86118.css.map": "/SuminInCanadaFE/static/css/main.39c86118.css.map",
-    "main.8140c8c1.js.map": "/SuminInCanadaFE/static/js/main.8140c8c1.js.map"
+    "main.c622c0db.js.map": "/SuminInCanadaFE/static/js/main.c622c0db.js.map"
   },
   "entrypoints": [
     "static/css/main.39c86118.css",
-    "static/js/main.8140c8c1.js"
+    "static/js/main.c622c0db.js"
   ]
 }
