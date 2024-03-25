@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import axios from 'axios';
+import axios from "../util/axiosUtil";
 import User from '../component/User';
 import Blog from './Blog';
 import closeButton from '../resource/images/closeButton.png';

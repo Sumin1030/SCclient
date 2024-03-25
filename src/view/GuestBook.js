@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from "../util/axiosUtil";
 import DateUtil from '../util/DateUtil';
 import GuestBookContent from '../component/GuestBookContent';
 import LanguageUtil from '../util/LanguageUtil';

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "../util/axiosUtil";
 import {useEffect, useState, useRef} from 'react';
 import BlogWriteTextArea from './BlogWriteTextArea';
 import {UploadImage, ImagePreview} from './UploadImage';

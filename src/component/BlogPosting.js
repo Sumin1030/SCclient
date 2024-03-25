@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import axios from 'axios';
+import axios from "../util/axiosUtil";
 // import BlogWrite from './BlogWrite';
 
 function BlogPosting(props) {

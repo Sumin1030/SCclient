@@ -1,7 +1,7 @@
 import { BlogList, CommentList } from "../component/BlogList";
 import BlogPosting from "../component/BlogPosting";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../util/axiosUtil";
 import BlogWrite from '../component/BlogWrite';
 import LanguageUtil from "../util/LanguageUtil";
 
