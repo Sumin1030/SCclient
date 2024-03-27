@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
-import axios from 'axios';
+import axios from "../util/axiosUtil";
+import config from '../config';
 // import BlogWrite from './BlogWrite';
 
 function BlogPosting(props) {
@@ -29,7 +30,7 @@ function BlogPosting(props) {
             for (const [key, content] of Object.entries(contentObj)) {
                 if(content?.type == 'img') {
                     console.log(content.content);
-                    _content.push(<img className='image-preview' key={idx++} src={'api'+content.content} />);
+                    _content.push(<img className='image-preview' key={idx++} src={config.url.add+'api'+content.content} />);
                 } else {
                     _content.push(<p className='posting-text' key={idx++}>{content}</p>);
                 }

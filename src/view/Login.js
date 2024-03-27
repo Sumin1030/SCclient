@@ -58,6 +58,7 @@ function Login(props) {
     const signIn = (info, isEnter = false) => {
         const result = isEnter? 'enter' : true;
         axios.post(`/api/signIn`, info).then((res) => {
+            console.log('login.js에서 변경', result, res);
             props.changeState(result);
         });
     }
