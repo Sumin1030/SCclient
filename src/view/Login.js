@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import axios from 'axios';
+import axios from "../util/axiosUtil";
 import DateUtil from '../util/DateUtil';
 // info: 회원가입 시 정보 저장 위함.
 //       정보 가입할 때 마다 함수 실행하기 때문에 전역변수로 설정.

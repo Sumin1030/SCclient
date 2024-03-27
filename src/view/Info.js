@@ -3,7 +3,7 @@ import DateTime from '../component/DateTime';
 import DateUtil from '../util/DateUtil';
 import { useEffect } from 'react';
 import Plotly from "plotly.js-dist";
-import axios from "axios";
+import axios from "../util/axiosUtil";
 import LanguageUtil from '../util/LanguageUtil';
 import { useSelector } from 'react-redux';
 

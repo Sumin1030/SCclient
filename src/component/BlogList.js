@@ -1,5 +1,5 @@
 import DateUtil from "../util/DateUtil";
-import axios from "axios";
+import axios from "../util/axiosUtil";
 import { useEffect, useState, useRef } from 'react';
 import LanguageUtil from "../util/LanguageUtil";
 import { useSelector } from "react-redux";

@@ -3,7 +3,7 @@ import Users from './Users';
 import GuestBook from './GuestBook';
 import TopPost from './TopPost';
 import Challenge from './Challenge';
-import axios from 'axios';
+import axios from "../util/axiosUtil";
 import Setting from '../component/Setting';
 function MainPage(props) {
 
