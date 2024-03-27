@@ -16,7 +16,7 @@
     "redux": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://sumin1030.github.io/SuminInCanadaFE/",
+  "homepage": "https://thisissumin.store",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
