@@ -84,15 +84,20 @@ function Login(props) {
         } else if (title == MSG) {
             setTitle(ANSWER);
             info.msg = txt;
-            changeCurrentText(`****************************
-            **                      **
-            **   ID: ${info.id}         **
-            **   Password: ${info.pw}   **
-            **   Name: ${info.name}            **
-            **   message: ${info.msg}    **
-            **                        **
-            ****************************
-            Y: yes, R: rewrite, L: login`, false);
+            changeCurrentText(`
+****************************
+****************************
+
+'  ID: ${info.id}      
+'  Password: ${info.pw}
+'  Name: ${info.name}  
+'  message: ${info.msg}
+
+****************************
+****************************
+
+Y: yes, R: rewrite, L: login`,
+             false);
         } else if (title == ANSWER) {
             if(txt == "L") {
                 isSignUp.current = false;
