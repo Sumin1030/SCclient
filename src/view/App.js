@@ -28,7 +28,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import MainPage from './MainPage';
 import Login from './Login';
-import LanguageUtil from "../util/LanguageUtil";
+import { language } from "../util/LanguageUtil";
 import { useSelector, useDispatch } from 'react-redux';
 import { languageActions } from '../store/languageSlice';
 
@@ -58,7 +58,8 @@ function App() {
         // console.log('lang', res.data.lang, 'state', langState);
         // 세션에 language 초기값 저장
         const lang = res.data.lang;
-        if(langState != lang && langState != lang?.val ) dispatch(languageActions.changeLang(LanguageUtil.getLangObj(lang)));
+        console.log(lang);
+        if(lang && langState != lang && langState != lang?.val ) dispatch(languageActions.changeLang(language.getLangObj(lang)));
         if(isLogined == 'enter') {
           setContent(getMain());
         }

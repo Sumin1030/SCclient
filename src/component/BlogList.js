@@ -1,8 +1,7 @@
 import DateUtil from "../util/DateUtil";
 import axios from "../util/axiosUtil";
 import { useEffect, useState, useRef } from 'react';
-import LanguageUtil from "../util/LanguageUtil";
-import { useSelector } from "react-redux";
+import { useTranslator } from "../util/LanguageUtil";
 
 function BlogList(props) {
     const className = `${props.title}`;
@@ -27,7 +26,6 @@ function CommentList(props) {
     const [comment, setComment] = useState([]);
     const commentDiv = useRef(null);
     const commentInput = useRef(null);
-    const lang = useSelector(state => state.language.lang);
     const getComment = () => {
         axios.get(`/api/getBlogComment?sq=${props.selectedPost}`).then((res) => {
             const result = res.data.result;
@@ -96,7 +94,7 @@ function CommentList(props) {
                 {comment}
             </div>
             <div className="comment-input">
-                <input type="text" ref={commentInput} className="input-text" placeholder={LanguageUtil.getMessage('blog.comment', lang)} autoFocus onKeyDown={handleOnKeyPress}></input>
+                <input type="text" ref={commentInput} className="input-text" placeholder={useTranslator('blog.comment')} autoFocus onKeyDown={handleOnKeyPress}></input>
             </div>
         </div>
     );

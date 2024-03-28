@@ -1,4 +1,5 @@
 import DateUtil from "../util/DateUtil";
+import { useTranslator } from '../util/LanguageUtil';
 function User(props) {
     /*
         const info = {
@@ -8,23 +9,27 @@ function User(props) {
             confirmed: user.CONFIRMED
         }   
     */
-   let date = props.info.date;
-   let className = '';
-   if (!props.info.title) {
+    let className = '';
+    let date = useTranslator("users.date");
+    let name = useTranslator("users.name");
+    let message = useTranslator("users.message");
+    if (!props.info.title) {
         className += Number(props.info.confirmed) == 1? "confirmed" : "unconfirmed";
         date = DateUtil.getDate(new Date(props.info.date).getTime() - new Date(props.info.date).getTimezoneOffset()*DateUtil.MINUTES_TO_MILLISECONDS, "desc", true);
-   } else className += 'user-title'
-   if(props.info.name == 'MASTER') className += ' master';
+        name = props.info.name;
+        message = props.info.message;
+    } else className += 'user-title'
+    if(props.info.name == 'MASTER') className += ' master';
     return (
         <div className={`user ${className}`} onClick={props.info.onClick} >
             <div className="user-date">
                 {date}
             </div>
             <div className="user-name">
-                {props.info.name}
+                {name}
             </div>
             <div className="user-message">
-                {props.info.message}
+                {message}
             </div>
         </div>
     );

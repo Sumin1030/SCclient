@@ -1,7 +1,9 @@
 {
     "mainPage" : {
-        "information" : "세부정보",
-        "guestBook" : "방명록"
+        "information" : "날짜 및 시간",
+        "guestBook" : "방명록",
+        "welcome": "안녕^_^",
+        "logout": "로그아웃"
     },
     "blog" : {
         "newPost": "새 글 쓰기",
@@ -10,5 +12,45 @@
     "construction" : {
         "underConstruction" : "아직 개발중 입니다.",
         "commingSoon" : "커 밍 순,,"
+    },
+    "guestBook" : {
+        "comment": "방명록 하나 남겨주세요 ! "
+    },
+    "currentTime" : {
+        "seoul" : "서울",
+        "toronto" : "토론토"
+    },
+    "info" : {
+        "visitor": "방문자 수",
+        "date": "날짜"
+    },
+    "users" : {
+        "date": "가입 날짜",
+        "name": "닉네임",
+        "message": "메시지"
+    },
+    "login" : {
+        "sayHi" : "안녕하세요. 허수민의 개인 웹사이트입니다.\n 회원가입을 하려면 Y 를 입력하세요.",
+        "signUp": "\n 회원가입 준비 완료.. \n 아이디는 문자와 숫자로만 입력해주세요. \n 아이디는 5글자 이상이어야 합니다.",
+        "id": "아이디:",
+        "pw": "비밀번호:",
+        "name": "닉네임:",
+        "msg": "짧은 소개:",
+        "answer": "입력해주세요:",
+        "top": "허수민의 개인 웹사이트",
+        "magicPass": "둘러보기",
+        "rewritePW": " 비밀번호는 8글자 이상이어야 합니다.",
+        "wrongPW":  " 비밀번호가 틀렸습니다.",
+        "allSet": " 로그인 완료..",
+        "noID": "해당 아이디가 존재하지 않습니다.",
+        "rewriteID": "아이디는 5글자 이상이어야 합니다.",
+        "rewriteAnswer": "안내된 글자만 입력해주세요.",
+        "completeSignUp": "성공! 로그인하세요.",
+        "failSignUp": "오류가 발생하여 실패했습니다. 다시 시도해주세요.",
+        "yes": "입력된 정보로 가입 진행",
+        "rewrite": "다시 입력",
+        "login": "로그인하기",
+        "permissionDenied": "권한이 없습니다. 로그인 해주세요."
     }
+
 }

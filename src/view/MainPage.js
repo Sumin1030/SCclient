@@ -5,6 +5,7 @@ import TopPost from './TopPost';
 import Challenge from './Challenge';
 import axios from "../util/axiosUtil";
 import Setting from '../component/Setting';
+import { useTranslator } from '../util/LanguageUtil';
 function MainPage(props) {
 
     const logout = (e) => {
@@ -48,7 +49,7 @@ function MainPage(props) {
             <div className="main-center">
                 <Users/>
                 <div className='from-host'>
-                    <div className='host-msg'>welcome</div>
+                    <div className='host-msg'>{useTranslator("mainPage.welcome")}</div>
                 </div>
             </div>    
             <div className="main-right">
@@ -56,7 +57,7 @@ function MainPage(props) {
                 <GuestBook/>
                 <TopPost/>
                 <div className='toppost'>
-                    <div className="logout-btn" onClick={logout}>로그아웃</div>
+                    <div className="logout-btn" onClick={logout}>{useTranslator("mainPage.logout")}</div>
                 </div>
             </div>
             <div className="main-bottom">

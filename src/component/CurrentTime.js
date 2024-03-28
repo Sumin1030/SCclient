@@ -1,5 +1,6 @@
 import DateUtil from '../util/DateUtil';
 import { useEffect, useState } from 'react';
+import { useTranslator } from '../util/LanguageUtil';
 function CurrentTime() {
 
     // 토론토 기준 현재시간
@@ -48,7 +49,7 @@ function CurrentTime() {
         <div className="curr-time">
             <div className="seoul-time">
                 <div className="time-title">
-                    SEOUL
+                    {useTranslator("currentTime.seoul")}
                 </div>
                 <div className="today-time">
                     {DateUtil.getDate(today_s)}
@@ -56,7 +57,7 @@ function CurrentTime() {
             </div>
             <div className="toronto-time">
                 <div className="time-title">
-                    TORONTO
+                {useTranslator("currentTime.toronto")}
                 </div>
                 <div className="today-time">
                     {DateUtil.getDate(today_t)}

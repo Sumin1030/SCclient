@@ -4,11 +4,9 @@ import DateUtil from '../util/DateUtil';
 import { useEffect } from 'react';
 import Plotly from "plotly.js-dist";
 import axios from "../util/axiosUtil";
-import LanguageUtil from '../util/LanguageUtil';
-import { useSelector } from 'react-redux';
+import { useTranslator } from "../util/LanguageUtil";
 
 function Info(props) {
-    const lang = useSelector(state => state.language.lang);
     useEffect(()=>{
         let curr = new Date();
         const todayDate = new Date(DateUtil.getUtc(curr) - (DateUtil.TORONTO_OFFSET * DateUtil.MINUTES_TO_MILLISECONDS));
@@ -59,16 +57,15 @@ function Info(props) {
 
     const redrawPlotly = (e) => {
         Plotly.relayout('myDiv', {});
-        
     }
 
     const layout = {
         xaxis: {
-            title: 'Date',
+            title: useTranslator("info.date"),
             automargin: 'height'
         },
         yaxis: {
-            title: 'Visitors',
+            title: useTranslator('info.visitor'),
             rangemode: 'nonnegative',
             // tickformat: `,d`,
             dtick: 1
@@ -92,7 +89,7 @@ function Info(props) {
 
     return(
         <div className="info">
-            <label className='info-title'>{LanguageUtil.getMessage('mainPage.information', lang)}</label>
+            <label className='info-title'>{useTranslator('mainPage.information')}</label>
             <DateTime />
             <div className="visitor" id="myDiv" >
             </div>
