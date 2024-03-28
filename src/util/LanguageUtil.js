@@ -70,4 +70,5 @@ const language = {
     // }
 }
 
-export {useTranslator, language};
+export {useTranslator};
+export default language;

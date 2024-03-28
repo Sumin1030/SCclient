@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import { language } from "../util/LanguageUtil";
+import language from "../util/LanguageUtil";
 import { useSelector, useDispatch } from 'react-redux';
 import { languageActions } from '../store/languageSlice';
 

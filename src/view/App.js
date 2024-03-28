@@ -28,7 +28,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import MainPage from './MainPage';
 import Login from './Login';
-import { language } from "../util/LanguageUtil";
+import language from "../util/LanguageUtil";
 import { useSelector, useDispatch } from 'react-redux';
 import { languageActions } from '../store/languageSlice';
 
