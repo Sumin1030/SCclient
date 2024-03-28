@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'DOSGothic';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/DOSGothic.woff') format('woff');
+  src: url('../fonts/DOSGothic.ttf');
   font-weight: normal;
   font-style: normal;
 }
@@ -464,6 +464,10 @@ html, body {
   font-size: 12pt;
   font-weight: bold;
   padding: 0;
+}
+
+.login-input {
+  flex: 1 1;
 }
 
 .title {
