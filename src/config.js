@@ -5,7 +5,7 @@ const local = "http://localhost:5001/";
 
 
 
-const setting = LOCAL;
+const setting = REMOTE;
 const config = {
     url: setting == LOCAL? local : server
 }
