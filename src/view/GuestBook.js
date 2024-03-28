@@ -2,8 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import axios from "../util/axiosUtil";
 import DateUtil from '../util/DateUtil';
 import GuestBookContent from '../component/GuestBookContent';
-import LanguageUtil from '../util/LanguageUtil';
-import { useSelector } from 'react-redux';
+import { useTranslator } from "../util/LanguageUtil";
 
 // 로그인 했는지 확인 
 // -> 글 등록할 때 확인하려면 모든 코드를 callback에 넣어야 하므로 미리 해놓기.
@@ -14,7 +13,7 @@ function GuestBook(props) {
     const input = useRef(null);
     const selectedContent = useRef(null);
     const [contents, setContents] = useState([]);
-    const lang = useSelector(state => state.language.lang);
+    const noPermission = useTranslator("login.permissionDenied");
 
     const getToday = () => {
         let curr = new Date();
@@ -113,7 +112,7 @@ function GuestBook(props) {
                 return;
             } else if(typeof loginInfo == 'undefined') {
                 console.log("로그인 안 되어 있음", loginInfo);
-                alert("You have to Sign in");
+                alert(noPermission);
                 e.currentTarget.value = "";
                 enterFlag = true;
                 return;
@@ -192,11 +191,11 @@ function GuestBook(props) {
 
     return(
         <div className="guest-book-outer">
-            <label className='guest-book-title'>{LanguageUtil.getMessage('mainPage.guestBook', lang)}</label>
+            <label className='guest-book-title'>{useTranslator('mainPage.guestBook')}</label>
             <div className="guest-book-inner">
                 <div className="guest-book-contents" onClick={clickContents}>{contents}</div>
                 <div className="guest-book-input">
-                    <input type="text" className="input-text" ref={input} autoFocus onKeyDown={handleOnKeyPress}></input>
+                    <input type="text" className="input-text" placeholder={useTranslator("guestBook.comment")}ref={input} autoFocus onKeyDown={handleOnKeyPress}></input>
                 </div>
             </div>
         </div>

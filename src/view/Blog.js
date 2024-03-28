@@ -3,7 +3,7 @@ import BlogPosting from "../component/BlogPosting";
 import { useEffect, useState } from "react";
 import axios from "../util/axiosUtil";
 import BlogWrite from '../component/BlogWrite';
-import LanguageUtil from "../util/LanguageUtil";
+import { useTranslator } from "../util/LanguageUtil";
 
 let selectedPostDom = null;
 function Blog(props) {
@@ -39,10 +39,11 @@ function Blog(props) {
         });
     }
 
+    const _content = useTranslator('blog.newPost');
     useEffect(() =>{
         axios.get('/api/isLogined').then((res) => {
             if(res.data != "" && res.data.name == 'MASTER') {
-                setNewPost(<BlogList title='new' onClick={() => writeNewPosting()} content={' + '+LanguageUtil.getMessage('blog.newPost', LanguageUtil.kor)} />);
+                setNewPost(<BlogList title='new' onClick={() => writeNewPosting()} content={' + '+_content} />);
             }
         });
         getList();

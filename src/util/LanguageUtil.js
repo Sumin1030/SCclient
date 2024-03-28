@@ -1,7 +1,22 @@
 import kor from './kor.json';
 import eng from './eng.json';
+import { useSelector } from 'react-redux';
 
-export default {
+function useTranslator(msg, _lang) {
+    const lang = useSelector(state => state.language.lang);
+    if(!_lang) _lang = lang;
+    const msgArr = msg.split('.');
+    let result;
+    const cur = language.langData(_lang);
+    let _cur = cur;
+    msgArr.forEach((key) => {
+        _cur = _cur[key];
+    })
+    result = _cur;
+    return result;
+}
+
+const language = {
     get kor() {
         return "KOR"
     },
@@ -28,7 +43,7 @@ export default {
         if (lang == this.kor || lang?.val == this.kor) {
             return kor
         } else return eng;
-    },
+    }
     // getCurLeng(callback, lang) {
     //     if(!lang) {
     //         axios.get('/api/getLanguage').then((res) => {
@@ -47,21 +62,6 @@ export default {
     //         return res.data;
     //     })
     // },
-    getMessage(msg, _lang) {
-        const msgArr = msg.split('.');
-        // const lang = this.getCurLeng();
-        // const lang = this.kor;
-        let result;
-        const cur = this.langData(_lang);
-        let _cur = cur;
-        msgArr.forEach((key) => {
-            _cur = _cur[key];
-        })
-        result = _cur;
-        // this.getCurLeng(cb);
-        return result;
-        
-    },
     // changeLang(_lang, callback) {
     //     axios.post('/api/setLanguage', {lang: _lang}).then((res) => {
     //         // if(typeof res.data == 'object') lang = res.data.val;
@@ -69,3 +69,5 @@ export default {
     //     });
     // }
 }
+
+export {useTranslator, language};

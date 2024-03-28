@@ -1,14 +1,55 @@
 {
     "mainPage" : {
         "information" : "Information",
-        "guestBook" : "GuestBook"
+        "guestBook" : "GuestBook",
+        "welcome": "welcome",
+        "logout": "Logout"
     },
     "blog" : {
         "newPost": "New Post",
-        "comment": "Enter Comment"
+        "comment": "Leave a Comment on this post !"
     },
     "construction" : {
         "underConstruction" : "UNDER CONSTRUCTION",
         "commingSoon" : "COMMING SOON,,"
+    },
+    "guestBook" : {
+        "comment": "Say Hi to everyone !"
+    },
+    "currentTime" : {
+        "seoul" : "SEOUL",
+        "toronto" : "TORONTO"
+    },
+    "info" : {
+        "visitor": "Visitor",
+        "date": "Date"
+    },
+    "users" : {
+        "date": "DATE",
+        "name": "NAME",
+        "message": "MESSAGE"
+    },
+    "login" : {
+        "sayHi" : " Hi. this is fixed-term diary made by Sumin.\n If you want to join us, type(y) in the ID field.",
+        "signUp": "\n Ready to Sign Up.. \n ID must be consist of only alphabet and number. \n And ID must be at least 5 characters.",
+        "id": "ID:",
+        "pw": "PW:",
+        "name": "NAME:",
+        "msg": "MESSAGE:",
+        "answer": "ANSWER:",
+        "top": "Welcome to Sumin's Page",
+        "magicPass": "MagicPass",
+        "rewritePW": " PW has to be more than 8 letters",
+        "wrongPW":  " Incorrect Password.",
+        "allSet": " Ready to start..",
+        "noID": "No such ID",
+        "rewriteID": "ID has to be more than 5 letters",
+        "rewriteAnswer": "Wrong Answer",
+        "completeSignUp": "Complete! Sign in now.",
+        "failSignUp": "Fail to Sign up. Try again.",
+        "yes": "CONTINUE WITH THIS INFORMATION",
+        "rewrite": "REWRITE INFORMATION",
+        "login": "LOGIN",
+        "permissionDenied": "No Permission. Sign In."
     }
 }

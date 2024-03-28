@@ -26,6 +26,7 @@ function UploadImage(props) {
                         file: file,
                         reader: e.target.result
                     };
+                    console.log(result);
                     if (result) {
                         // 최대 갯수 넘지 않도록
                         // state가 아니라 uploadedImages로 state를 가져와서 쓰면 일부만 저장된다.

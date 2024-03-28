@@ -3,18 +3,13 @@ import axios from "../util/axiosUtil";
 import User from '../component/User';
 import Blog from './Blog';
 import closeButton from '../resource/images/closeButton.png';
+
 function Users(props) {
     const [modalSwitch, setModalSwitch] = useState(false);
     const [users, setUsers] = useState([]);
-
     const getUsers = () => {
-        let users = [];
-        const title ={
-            date: 'DATE',
-            name: 'NAME',
-            message: 'MESSAGE'
-        };
-        users.push(<User info={{title: true, ...title}} key='0' />);
+        let users = [];  
+        users.push(<User info={{title: true}} key='0' />);
         axios.get('/api/getUsers').then((res) => {
             if(res.data.result.length > 0) {
                 for(let i = 0; i < res.data.result.length; i++) {

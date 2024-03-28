@@ -30,7 +30,7 @@ function BlogPosting(props) {
             for (const [key, content] of Object.entries(contentObj)) {
                 if(content?.type == 'img') {
                     console.log(content.content);
-                    _content.push(<img className='image-preview' key={idx++} src={config.url.add+'api'+content.content} />);
+                    _content.push(<img className='image-preview' key={idx++} src={config.url+'api'+content.content} />);
                 } else {
                     _content.push(<p className='posting-text' key={idx++}>{content}</p>);
                 }

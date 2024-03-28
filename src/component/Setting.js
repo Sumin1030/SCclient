@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import LanguageUtil from '../util/LanguageUtil';
+import { language } from "../util/LanguageUtil";
 import { useSelector, useDispatch } from 'react-redux';
 import { languageActions } from '../store/languageSlice';
 
@@ -12,19 +12,19 @@ function Setting(props) {
     const lang = useSelector(state => state.language.lang);
 
     const getLabel = (cur) => {
-        if(cur == LanguageUtil.eng) return LanguageUtil.getLangObj(LanguageUtil.eng);
-        return LanguageUtil.getLangObj(LanguageUtil.kor);
+        if(cur == language.eng) return language.getLangObj(language.eng);
+        return language.getLangObj(language.kor);
     }
     const _changeLang = () => {
         console.log('changeLang', lang, 'to ', getLabel(lang).label);
         // props.setLang(getLabel(props.lang));
-        // LanguageUtil.changeLang(getLabel(props.lang), props.setLang);
+        // language.changeLang(getLabel(props.lang), props.setLang);
         dispatch(languageActions.changeLang(getLabel(lang).label));
     }
 
     useEffect(() => {
         console.log('setting useEffect', props.lang);
-        // let result = getLang(LanguageUtil.getCurLeng());
+        // let result = getLang(language.getCurLeng());
         // console.log('mount');
         // if(!result) result = ENG;
         // setLanguage(result);
