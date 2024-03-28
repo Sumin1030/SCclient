@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useTranslator } from "../util/LanguageUtil";
 
 function BlogList(props) {
-    const className = `${props.title}`;
+    let className = `${props.className}`;
     const date = DateUtil.getDate(new Date(props.date).getTime() - new Date(props.date).getTimezoneOffset()*DateUtil.MINUTES_TO_MILLISECONDS, "desc", true);
 
     const isOnClick = () => {
@@ -13,7 +13,7 @@ function BlogList(props) {
         if(props.date) list.push(<div key={idx++} className={`${className}-date`}>{date}</div>);
         if(props.name) list.push(<div key={idx++} className={`${className}-name`}>{props.name}</div>);
         if(props.content) list.push(<div key={idx} className={`${className}-title`}>{props.content}</div>);
-
+        className += props.first == "true"? " selected-post" : "";
         return props.onClick ? 
             <div className={'blog-list ' + className} onClick={(e) => props.onClick(e, props.sq)}>{list}</div> :
             <div className={'blog-list ' + className}>{list}</div>

@@ -27,31 +27,42 @@ function Blog(props) {
     }
 
     const getList = () => {
+        let sq;
         axios.get('/api/getBlogList').then((res) => {
             const result = res.data.result;
             const _blogArr = [];
             let idx = 0;
+            let firstFlag = true;
             result.forEach((blog) => {
-                const _blog = <BlogList key={idx++} content={blog.TITLE} date={blog.DATE} sq={blog.BLOG_SQ} title='posting' onClick={(e, sq) => onTitleClick(e, sq)}></BlogList>
+                let _blog = <BlogList key={idx++} content={blog.TITLE} date={blog.DATE} sq={blog.BLOG_SQ} className='posting' onClick={(e, sq) => onTitleClick(e, sq)}></BlogList>
+                if(firstFlag) {
+                    _blog = <BlogList first="true" className="posting" key={idx++} content={blog.TITLE} date={blog.DATE} sq={blog.BLOG_SQ} onClick={(e, sq) => onTitleClick(e, sq)}></BlogList>
+                    firstFlag = false;
+                    setSelectedPost(blog.BLOG_SQ);
+                }
                 _blogArr.push(_blog);
             });
             setBlogArr(_blogArr);
         });
     }
 
+    useEffect(()=> {
+        selectedPostDom = document.querySelector('.selected-post');
+    }, [blogArr]);
+
     const _content = useTranslator('blog.newPost');
     useEffect(() =>{
         axios.get('/api/isLogined').then((res) => {
             if(res.data != "" && res.data.name == 'MASTER') {
-                setNewPost(<BlogList title='new' onClick={() => writeNewPosting()} content={' + '+_content} />);
+                setNewPost(<BlogList className='new' onClick={() => writeNewPosting()} content={' + '+_content} />);
             }
         });
         getList();
     }, []);
 
-    useEffect(() => {
-        getList();
-    }, [selectedPost]);
+    // useEffect(() => {
+    //     getList();
+    // }, [selectedPost]);
 
     const writeNewPosting = () => {
         setSelectedPost('new');
