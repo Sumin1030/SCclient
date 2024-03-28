@@ -37,8 +37,11 @@ export default {
     },
     isSummerTime() {
         const current = new Date();
-        const month = current.getMonth();
-        if(month >= 5 && month < 9) return true;
+        const start = new Date().setMonth(2, 10);
+        const end = new Date().setMonth(10, 3);
+        if(current >= start && current < end) {
+            return true;
+        }
         return false;
     },
     dateToTime(date) {

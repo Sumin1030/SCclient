@@ -18,7 +18,8 @@ function GuestBook(props) {
 
     const getToday = () => {
         let curr = new Date();
-        return DateUtil.getDate(DateUtil.getUtc(`${curr.getFullYear()}-${curr.getMonth()+1}-${curr.getDate()+1}`), "desc");
+        const utc = DateUtil.getUtc(`${curr.getFullYear()}-${curr.getMonth()+1}-${curr.getDate()}`);
+        return DateUtil.getDate(utc, "desc");
     }
 
     const sortContents = (contents) => {

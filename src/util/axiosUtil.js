@@ -1,11 +1,10 @@
 import axios from "axios";
-import apiUrl from "../util/apiUrl.json";
+import config from "../config";
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = apiUrl.add;
+axios.defaults.baseURL = config.url;
 
 function axiosUtil(url) {
-    axios.defaults.baseURL = apiUrl.add;
-    // axios.defaults.baseURL = apiUrl.local;
+    // axios.defaults.baseURL = config.url;
     return axios;
 }
 
