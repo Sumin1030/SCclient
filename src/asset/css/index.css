@@ -905,6 +905,7 @@ html, body {
   width: calc(20% - 20px);
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
+  overflow-y: scroll;
 }
 .blog-list {
   height: auto;
