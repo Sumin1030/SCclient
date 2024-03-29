@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from "../util/axiosUtil";
 
 const initialState = {
-    lang: "ENG"
+    lang: "KOR"
 };
 
 export const languageSlice = createSlice({

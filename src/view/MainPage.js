@@ -53,12 +53,14 @@ function MainPage(props) {
                 </div>
             </div>    
             <div className="main-right">
-                <Setting/>
+                <div className='langBtn'>
+                    <Setting/>
+                    <div className='toppost'>
+                        <div className="logout-btn" onClick={logout}>{useTranslator("mainPage.logout")}</div>
+                    </div>
+                </div>
                 <GuestBook/>
                 <TopPost/>
-                <div className='toppost'>
-                    <div className="logout-btn" onClick={logout}>{useTranslator("mainPage.logout")}</div>
-                </div>
             </div>
             <div className="main-bottom">
                 <Challenge/>

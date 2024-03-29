@@ -296,29 +296,55 @@ html, body {
 .main-right {
   min-height: 100%;
   display: grid;
-  grid-template-rows: 1.5fr 1fr;
+  grid-template-rows: 30px 1.5fr 1fr;
   position: relative;
 }
 
-.main-setting {
-  position: absolute;
+.langBtn {
   display: flex;
-  justify-content: end;
-  padding: 5px;
-  padding-right: 10px;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.main-setting, .toppost {
+  border: 2px solid rgb(14, 222, 94);
+  box-shadow: 0 5px 10px rgba(165, 165, 165, 0.25), 0 3px 3px rgba(176, 158, 158, 0.22);
+  color: black;
+  display: inline;
+  width: auto;
+  padding-top: 3px;
   padding-left: 10px;
-  color: gray;
-  width: calc(100% - 20px);
+  padding-right: 10px;
+  background-color: green;
+  border-radius: 15%;
+  margin: 5px;
+  height: calc(100% - 13px);
+  margin-bottom: 0;
+  position: absolute;
   height: 20px;
 }
 
-.lang {
-  width: auto;
+.main-setting {
+  right: 25%;
 }
 
-.lang:hover {
+.toppost {
+  right: 3%;
+}
+
+.main-setting:hover{
   cursor: pointer;
   font-weight: bold;
+}
+.toppost:hover{
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.lang, .logout-btn {
+  width: auto;
+  display: flex;
+  align-items: center;
 }
 
 .main-center {
@@ -354,7 +380,7 @@ html, body {
   font-weight: bold;
 }
 
-.logout-btn {
+/* .logout-btn {
   width: 60px;
   height: auto;
   padding: 5px;
@@ -364,11 +390,11 @@ html, body {
   position: absolute;
   right: 1%;
   bottom: 1%;
-}
+} */
 
-.logout-btn:hover {
+/* .logout-btn:hover {
   cursor: pointer;
-}
+} */
 
 
 /*
@@ -485,7 +511,7 @@ html, body {
   align-items: start;
 }
 
-.login .enter-btn {
+.login .enter-btn, .login .main-setting{
   width: auto;
   height: 20px;
   padding: 10px;
@@ -493,12 +519,25 @@ html, body {
   border-radius: 15%;
   display: inline;
   position: absolute;
-  top: 75%;
-  left: 85%;
+  top: 4%;
+  left: 84%;
+  border: 2px solid rgb(14, 222, 94);
+  box-shadow: 0 5px 10px rgba(165, 165, 165, 0.25), 0 3px 3px rgba(176, 158, 158, 0.22);
 }
 
-.login .enter-btn:hover {
+.login .main-setting {
+  left: 94%;
+  color: black;
+}
+
+.login .enter-btn:hover{
   cursor: pointer;
+  font-size: large;
+}
+
+.login .main-setting:hover {
+  cursor: pointer;
+  font-size: large;
 }
 
 
@@ -905,6 +944,7 @@ html, body {
   width: calc(20% - 20px);
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
+  overflow-y: scroll;
 }
 .blog-list {
   height: auto;
@@ -948,7 +988,7 @@ html, body {
 }
 
 .blog-list.new {
-  height: 50px;
+  height: auto;
   width: auto;
   margin: 10px;
   margin-bottom: 5px;

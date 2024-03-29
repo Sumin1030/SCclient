@@ -33,8 +33,8 @@ function Setting(props) {
     
 
     return (
-        <div className='main-setting'>
-            <span className='lang' onClick={_changeLang}>{getLabel(lang).label}</span>
+        <div className='main-setting' onClick={_changeLang}>
+            <span className='lang'>{getLabel(lang).label}</span>
         </div>
     );
 }
