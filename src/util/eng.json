@@ -7,7 +7,7 @@
     },
     "blog" : {
         "newPost": "New Post",
-        "comment": "Leave a Comment on this post !"
+        "comment": "Leave a Comment !"
     },
     "construction" : {
         "underConstruction" : "UNDER CONSTRUCTION",
@@ -38,7 +38,7 @@
         "msg": "MESSAGE:",
         "answer": "ANSWER:",
         "top": "Welcome to Sumin's Page",
-        "magicPass": "MagicPass",
+        "magicPass": "MAGIC PASS",
         "rewritePW": " PW has to be more than 8 letters",
         "wrongPW":  " Incorrect Password.",
         "allSet": " Ready to start..",
