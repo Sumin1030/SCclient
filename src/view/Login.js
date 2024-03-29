@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from "../util/axiosUtil";
 import DateUtil from '../util/DateUtil';
+import Setting from '../component/Setting';
 import { useTranslator } from '../util/LanguageUtil';
 // info: 회원가입 시 정보 저장 위함.
 //       정보 가입할 때 마다 함수 실행하기 때문에 전역변수로 설정.
@@ -219,6 +220,7 @@ ${typeOption}`,
 
     return(
         <div className="login">
+            {/* <Setting/> */}
             <div className="login-prompt">
                 <div className="login-top-bar">
                     <div className="login-top-bar-buttons">
