@@ -4,22 +4,19 @@ import { useEffect, useState, useRef } from 'react';
 import { useTranslator } from "../util/LanguageUtil";
 
 function BlogList(props) {
-    let className = `${props.className}`;
+    const _className = props.className.split(" ");
     const date = DateUtil.getDate(new Date(props.date).getTime() - new Date(props.date).getTimezoneOffset()*DateUtil.MINUTES_TO_MILLISECONDS, "desc", true);
+    let className = _className[0]; 
+    const list = [];
+    let idx = 1;
+    if(props.date) list.push(<div key={idx++} className={`${className}-date`}>{date}</div>);
+    if(props.name) list.push(<div key={idx++} className={`${className}-name`}>{props.name}</div>);
+    if(props.content) list.push(<div key={idx} className={`${className}-title`}>{props.content}</div>);
+    let result =  props.onClick ? 
+        <div className={'blog-list ' + props.className} onClick={(e) => props.onClick(e, props.sq)}>{list}</div> :
+        <div className={'blog-list ' + props.className}>{list}</div>
 
-    const isOnClick = () => {
-        const list = [];
-        let idx = 1;
-        if(props.date) list.push(<div key={idx++} className={`${className}-date`}>{date}</div>);
-        if(props.name) list.push(<div key={idx++} className={`${className}-name`}>{props.name}</div>);
-        if(props.content) list.push(<div key={idx} className={`${className}-title`}>{props.content}</div>);
-        className += props.first == "true"? " selected-post" : "";
-        return props.onClick ? 
-            <div className={'blog-list ' + className} onClick={(e) => props.onClick(e, props.sq)}>{list}</div> :
-            <div className={'blog-list ' + className}>{list}</div>
-    }
-
-    return isOnClick();
+    return result;
 }
 
 function CommentList(props) {
