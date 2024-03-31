@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useTranslator } from "../util/LanguageUtil";
 
 function BlogList(props) {
-    const _className = props.className.split(" ");
+    const _className = props.className.indexOf(" ") > 0? props.className.split(" ") : [props.className];
     const date = DateUtil.getDate(new Date(props.date).getTime() - new Date(props.date).getTimezoneOffset()*DateUtil.MINUTES_TO_MILLISECONDS, "desc", true);
     let className = _className[0]; 
     const list = [];
@@ -29,7 +29,7 @@ function CommentList(props) {
             const _blogArr = [];
             let idx = 0;
             result.forEach((blog) => {
-                const _blog = <BlogList key={idx++} content={blog.CONTENT} date={blog.DATE} name={blog.NAME} title='comment'></BlogList>
+                const _blog = <BlogList className="comment" key={idx++} content={blog.CONTENT} date={blog.DATE} name={blog.NAME} title='comment'></BlogList>
                 _blogArr.push(_blog);
             });
             setComment(_blogArr);
