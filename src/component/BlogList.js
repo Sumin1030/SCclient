@@ -87,7 +87,7 @@ function CommentList(props) {
 
     return (
         <div className='comments'>
-            <div className='comment-list' ref={commentDiv}>
+            <div className='comment-list scroll' ref={commentDiv}>
                 {comment}
             </div>
             <div className="comment-input">

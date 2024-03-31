@@ -184,7 +184,7 @@ function BlogWrite(props) {
                 <div className="blog-write-title">
                     <textarea className='blog-write-title-input input-text' ref={title} type='text' placeholder='title' onKeyPress={checkEnter} onChange={setTitleHeight} rows={1}></textarea>
                 </div>
-                <div className="blog-write-content">
+                <div className="blog-write-content scroll">
                     {postingArea}
                 </div>
             </div>

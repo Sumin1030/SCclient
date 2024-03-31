@@ -83,7 +83,7 @@ function Blog(props) {
 
     return (
         <div className="blog">
-            <div className='posting-list'>
+            <div className='posting-list scroll-y'>
                 {newPost}
                 {blogArr}
             </div>

@@ -30,6 +30,18 @@ html, body {
   overflow: hidden;
 }
 
+.scroll {
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+.scroll-y {
+  overflow-y: scroll;
+}
+
 /*
 ************* Construction ***************
 */
@@ -469,7 +481,6 @@ html, body {
   width: calc(100% - 10px);
   height: calc(100% - 28px);
   padding-left: 10px;
-  overflow: scroll;
 }
 
 .written-text {
@@ -687,7 +698,6 @@ html, body {
   max-height: calc(100% - 28px);
   display: flex;
   flex-direction: column;
-  overflow: scroll;
   font-size: 0.7vw;
 }
 
@@ -775,7 +785,6 @@ html, body {
 .users {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
   height: 70%;
 }
 
@@ -919,7 +928,6 @@ html, body {
   display: flex;
   flex-direction: column;
   height: 93%;
-  overflow: scroll;
 }
 
 .comment-input {
@@ -944,7 +952,6 @@ html, body {
   width: calc(20% - 20px);
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
-  overflow-y: scroll;
 }
 .blog-list {
   height: auto;
@@ -967,7 +974,6 @@ html, body {
   color: green;
   height: calc(100% - 60px);
   width: calc(60% - 40px);
-  overflow-y : scroll;
 }
 
 .blog-title {
@@ -1117,9 +1123,8 @@ html, body {
   overflow-y: hidden;
 }
 
-.blog-write-content {
-  overflow: scroll;
-}
+/* .blog-write-content {
+} */
 
 /*
 ************* UploadImage *************

@@ -41,7 +41,7 @@ function Users(props) {
     }, []);
 
     return(
-        <div className="users">
+        <div className="users scroll-y">
             {users}
             {/* <User info={{date: '2023-10-20', id: 'gjtnals2', name: 'sumin', confirmed: '1', message: 'hi'}} /> */}
                
