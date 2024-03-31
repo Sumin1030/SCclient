@@ -95,7 +95,7 @@ html, body {
   font-family: 'Courier New', Courier, monospace;
 }
 .info-title{
-  height: 1.5%;
+  height: 25px;
  }
 
 .info-time {
@@ -107,7 +107,7 @@ html, body {
 }
 
 .grass {
-  height: 23.5%;
+  height: calc(25% - 25px);
 }
 
 .grass {
@@ -308,55 +308,63 @@ html, body {
 .main-right {
   min-height: 100%;
   display: grid;
-  grid-template-rows: 30px 1.5fr 1fr;
+  grid-template-rows: 0.6fr 0.4fr;
   position: relative;
 }
 
 .langBtn {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  display: inline;
+  position: absolute;
+  height: 40px;
+  padding: 5px;
 }
 
 .main-setting, .toppost {
   border: 2px solid rgb(14, 222, 94);
-  box-shadow: 0 5px 10px rgba(165, 165, 165, 0.25), 0 3px 3px rgba(176, 158, 158, 0.22);
+  box-shadow: 7px 8px 6px 0px rgb(165 165 165 / 33%), 2px 3px 4px rgb(255 255 255 / 59%);
   color: black;
   display: inline;
-  width: auto;
+  width: 65px;
   padding-top: 3px;
   padding-left: 10px;
   padding-right: 10px;
   background-color: green;
   border-radius: 15%;
   margin: 5px;
-  height: calc(100% - 13px);
   margin-bottom: 0;
   position: absolute;
-  height: 20px;
+  height: 25px;
 }
 
 .main-setting {
-  right: 25%;
+  right: 125px;
+  width: auto;
 }
 
 .toppost {
-  right: 3%;
+  right: 25px;
 }
 
 .main-setting:hover{
   cursor: pointer;
-  font-weight: bold;
+  /* font-weight: bold; */
+  right: 123px;
+  width: 29px;
+  height: 27px;
 }
 .toppost:hover{
+  right: 22px;
   cursor: pointer;
-  font-weight: bold;
+  /* font-weight: bold; */
+  width: 70px;
+  height: 27px;
 }
 
 .lang, .logout-btn {
   width: auto;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .main-center {
@@ -533,7 +541,7 @@ html, body {
   top: 4%;
   left: 84%;
   border: 2px solid rgb(14, 222, 94);
-  box-shadow: 0 5px 10px rgba(165, 165, 165, 0.25), 0 3px 3px rgba(176, 158, 158, 0.22);
+  box-shadow: 7px 8px 6px 0px rgb(165 165 165 / 33%), 2px 3px 4px rgb(255 255 255 / 59%);
 }
 
 .login .main-setting {
@@ -671,20 +679,22 @@ html, body {
   color: gray;
   padding: 10px;
   width: calc(100% - 20px);
-  height: calc(100% - 20px);
-  min-height: calc(100% - 20px);
+  height: calc(100% - 40px);
+  min-height: calc(100% - 40px);
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 }
 
 .guest-book-title {
-  height: 4%;
+  height: 25px;
 }
 
 .guest-book-inner {
   height: calc(100% - 25px);
   /* background-color: white; */
   background-color: rgb(14, 14, 14);
+  /* background-color: rgb(155, 234, 155); */
   border-top: 0.1px solid gray;
   /* margin: 10px;
   width: calc(100% - 20px);

@@ -22,7 +22,7 @@ function Info(props) {
             // mode: "lines",
             type: 'scatter',
             marker: {
-                color: "gray"
+                color: "rgb(80, 234, 155)"
             }
         };
         // 로그인 시 utc 기준으로 로그 쌓음
