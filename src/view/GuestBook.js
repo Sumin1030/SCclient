@@ -193,7 +193,7 @@ function GuestBook(props) {
         <div className="guest-book-outer">
             <label className='guest-book-title'>{useTranslator('mainPage.guestBook')}</label>
             <div className="guest-book-inner">
-                <div className="guest-book-contents" onClick={clickContents}>{contents}</div>
+                <div className="guest-book-contents scroll" onClick={clickContents}>{contents}</div>
                 <div className="guest-book-input">
                     <input type="text" className="input-text" placeholder={useTranslator("guestBook.comment")}ref={input} autoFocus onKeyDown={handleOnKeyPress}></input>
                 </div>

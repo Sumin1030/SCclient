@@ -47,7 +47,7 @@ function BlogPosting(props) {
     }, [props.selectedPost]);
 
     return (
-        <div className="blog-posting">
+        <div className="blog-posting scroll-y">
             <p className='blog-title'>{title}</p>
             {content}
             {/* <img src={content}></img> */}

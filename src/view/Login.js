@@ -232,7 +232,7 @@ ${typeOption}`,
                         &#127968; {useTranslator('login.top')}
                     </div>
                 </div>
-                <div className="login-text-box" ref={textBox}>
+                <div className="login-text-box scroll" ref={textBox}>
                     <div className="written-text">
                         {fixedText}
                     </div>
