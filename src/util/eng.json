@@ -3,7 +3,7 @@
         "information" : "Information",
         "guestBook" : "GuestBook",
         "welcome": "welcome",
-        "logout": "Logout"
+        "logout": "LOGOUT"
     },
     "blog" : {
         "newPost": "New Post",
