@@ -19,6 +19,7 @@ function BlogList(props) {
     return result;
 }
 
+let loginInfo;
 function CommentList(props) {
     const [comment, setComment] = useState([]);
     const commentDiv = useRef(null);
@@ -37,6 +38,13 @@ function CommentList(props) {
     }
 
     useEffect(() => {
+        axios.get(`/api/isLogined`).then((res) => {
+            if(res && res.data.isLogined) loginInfo = res.data;
+            else loginInfo = undefined;
+        });
+    }, []);
+
+    useEffect(() => {
         if(props.selectedPost) {
             if(props.selectedPost == 'new') {
                 setComment(null);
@@ -53,24 +61,30 @@ function CommentList(props) {
         commentDiv.current.scrollTop = commentDiv.current.scrollHeight;
     }, [comment]);
 
+    const noPermission = useTranslator("login.permissionDenied");
     let enterFlag = false;
     // 엔터 눌렸는지 확인
     const handleOnKeyPress = (e) => {
+
         if(e.key == 'Enter') {
             if(enterFlag) {
                 e.currentTarget.value = "";
                 enterFlag = false;
                 return;
+            } else if(typeof loginInfo == 'undefined') {
+                alert(noPermission);
+                e.currentTarget.value = "";
+                enterFlag = true;
+                return;
             }
             const val = e.currentTarget.value;
             const utc = DateUtil.getUtc(new Date());
             const sequence = `SQ_${utc}`;
-            let currTime = new Date();
             const info = {
                 sq: sequence,
                 content: val,
                 date: DateUtil.getDate(utc, "desc"),
-                id: 'gjtnals2',
+                id: loginInfo.userid,
                 parent: props.selectedPost
             };
             axios.post("/api/insertBlogComment", info).then((res) => {

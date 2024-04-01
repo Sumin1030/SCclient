@@ -111,7 +111,6 @@ function GuestBook(props) {
                 e.currentTarget.value = "";
                 return;
             } else if(typeof loginInfo == 'undefined') {
-                console.log("로그인 안 되어 있음", loginInfo);
                 alert(noPermission);
                 e.currentTarget.value = "";
                 enterFlag = true;
