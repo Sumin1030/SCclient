@@ -62,11 +62,21 @@ function Info(props) {
 
     const layout = {
         xaxis: {
-            title: useTranslator("info.date"),
+            title: {
+                text: useTranslator("info.date"),
+                font: {
+                    color: "rgb(118, 118, 118)"
+                }
+            },
             automargin: 'height'
         },
         yaxis: {
-            title: useTranslator('info.visitor'),
+            title: {
+                text: useTranslator('info.visitor'),
+                font: {
+                    color: "rgb(118, 118, 118)"
+                }
+            },
             rangemode: 'nonnegative',
             // tickformat: `,d`,
             dtick: 1
@@ -81,7 +91,14 @@ function Info(props) {
             r: 30,
             pad: 10
         },
-        autosize: true
+        autosize: true,
+        legend: {
+            title: {
+                font: {
+                    color: "white"
+                }
+            }
+        }
     };
 
     const option = {
