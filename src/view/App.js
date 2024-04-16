@@ -23,6 +23,7 @@
 // }
 
 // export default App;
+import Sumin from "../resume/Sumin";
 import axios from "../util/axiosUtil";
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -71,7 +72,8 @@ function App() {
 
   return (
     <div className="app">
-      {content}
+      <Sumin />
+      {/* {content} */}
     </div>
   );
   // return <Calander />
