@@ -23,7 +23,6 @@
 // }
 
 // export default App;
-import Sumin from "../resume/Sumin";
 import axios from "../util/axiosUtil";
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -32,6 +31,11 @@ import Login from './Login';
 import language from "../util/LanguageUtil";
 import { useSelector, useDispatch } from 'react-redux';
 import { languageActions } from '../store/languageSlice';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Works from "../resume/Works";
+import Experience from "../resume/Experience";
+import Project from "../resume/Project";
+import About from "../resume/About";
 
 // import Calander from '../component/Calendar';
 
@@ -72,8 +76,15 @@ function App() {
 
   return (
     <div className="app">
-      <Sumin />
-      {/* {content} */}
+      <BrowserRouter>
+        <Routes>
+          <Route path='/resume' element={<About />}></Route>
+          <Route path='/resume/works' element={<Works />}></Route>
+          <Route path='/resume/works/experience' element={<Experience />}></Route>
+          <Route path='/resume/works/project' element={<Project />}></Route>
+          <Route path='/' element={content}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
   // return <Calander />

@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Default, Info, Skills } from "./InfoComp";
+import { Default, Info, Skills } from "./AboutComp";
+import { MENU, Menu } from "./Menu";
 
 const CLICKED = 'clicked';
 let currTarget = null;
 
-function Sumin() {
+function About() {
     const [content, setContent] = useState(Default);
     const setClicked = (target, _content) => {
         if(currTarget && currTarget.classList.contains(CLICKED)) {
@@ -31,7 +32,8 @@ function Sumin() {
         setClicked(e.target, Skills);
     };
     return (
-        <div className='resume-main'>
+        <div className='resume resume-about'>
+            <Menu curr={MENU.ABOUT} />
             <div className='resume-left'>
                 <div className='character'>place for pic</div>
                 <div className='title'>
@@ -49,7 +51,6 @@ function Sumin() {
                         <button className="info-btn" onClick={clickInfo}>INFO</button>
                     </div>
                     <div className="second-line-btns">
-                        <button className="works">WORKS</button>
                     </div>
                 </div>
             </div>
@@ -57,4 +58,4 @@ function Sumin() {
     );
 }
 
-export default Sumin;
+export default About;
