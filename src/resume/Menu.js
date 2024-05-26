@@ -37,7 +37,7 @@ function Menu(props){
 
 function Back() {
     return (
-        <Link to='/resume/works' className="back-link">
+        <Link to='/resume/works' className="resume resume-menu back-link">
             <label className="back-label">BACK</label>
         </Link>
     )
