@@ -244,7 +244,7 @@ ${typeOption}`,
                     </div>
                 </div>
             </div>
-            <div className="enter-btn" onClick={clickEnter}>{useTranslator("login.magicPass")}</div>
+            <button className="enter-btn" onClick={clickEnter}>{useTranslator("login.magicPass")}</button>
         </div>
     );
 }

@@ -1,8 +1,14 @@
+@import './resume.css';
 @font-face {
   font-family: 'DOSGothic';
   src: url('../fonts/DOSGothic.ttf');
   font-weight: normal;
   font-style: normal;
+}
+
+*:not(table, table *, .calender, .resume, .resume *) {
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -16,11 +22,6 @@ html, body {
   position: relative;
 }
 
-*:not(table, table *, .calender) {
-  width: 100%;
-  height: 100%;
-}
-
 .app {
   position: fixed;
 }
@@ -31,7 +32,7 @@ html, body {
 }
 
 .scroll {
-  overflow: scroll;
+  overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -92,7 +93,7 @@ html, body {
 }
 
 .info .d-day{
-  font-family: 'Courier New', Courier, monospace;
+  /* font-family: 'Courier New', Courier, monospace; */
 }
 .info-title{
   height: 25px;
@@ -216,28 +217,32 @@ html, body {
   height: 60%;
   display: flex;
   flex-direction: column;
+  font-family: 'DOSGothic';
+  font-size: 100pt;
+  color: rgba(170, 170, 170, 0.769);
+  text-shadow: 5px 5px 1px rgba(255, 2, 19, 0.599), -1px -1px 1px #ffffff;
+  letter-spacing: 20pt;
+  text-align: center;
 }
 
 .d-day .country {
-  /* font-size: 16pt; */
+  font-size: 120pt;
+  letter-spacing: 8pt;
+  height: 50%;
+}
+
+/* .d-day .country {
   font-size: 0.65vw;
   font-weight: bold;
   height: 60%;
-  color: rgb(255, 1, 107);
-}
-
-.d-day .date {
+}*/
+/* .d-day .date {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 73%;
 }
 
-.d-day .date * {
-  font-size: 0.9vw;
-  /* font-size: 0.48vw; */
-  font-weight: bold;
-}
 .d-day .date .d {
   width: 19%;
 }
@@ -250,7 +255,7 @@ html, body {
 }
 .d-day .date .num.num1 {
   width: 17%;
-}
+} */
 /* 3d
 .d-day .date .d {
   font-size: 0.48vw;
@@ -273,7 +278,8 @@ html, body {
 
 .d-day .secondRow {
   display: flex;
-  height: 40%;
+  /* height: 40%; */
+  height: 50%;
 }
 
 .d-day .secondRow .flag {
@@ -320,25 +326,39 @@ html, body {
 }
 
 .main-setting, .toppost {
-  border: 2px solid rgb(14, 222, 94);
-  box-shadow: 7px 8px 6px 0px rgb(165 165 165 / 33%), 2px 3px 4px rgb(255 255 255 / 59%);
-  color: black;
   display: inline;
-  width: 65px;
-  padding-top: 3px;
+  width: auto;
+  height: auto;
+  padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: green;
-  border-radius: 15%;
   margin: 5px;
   margin-bottom: 0;
   position: absolute;
-  height: 25px;
+  color: #44ff44;
+  background-color: #515151d9;
+  font-family: 'DOSGothic';
+}
+
+.toppost {
+  width: 80px;
+}
+
+.login .enter-btn, .login .main-setting {
+  width: auto;
+  height: auto;
+  padding: 10px;
+  background-color: #515151d9;
+  display: inline;
+  position: absolute;
+  top: 4%;
+  left: 84%;
+  color: #44ff44;
+  font-family: 'DOSGothic';
 }
 
 .main-setting {
-  right: 125px;
-  width: auto;
+  right: 110px;
 }
 
 .toppost {
@@ -348,16 +368,14 @@ html, body {
 .main-setting:hover{
   cursor: pointer;
   /* font-weight: bold; */
-  right: 123px;
-  width: 29px;
-  height: 27px;
+  /* right: 123px; */
+  /* height: 27px; */
 }
 .toppost:hover{
-  right: 22px;
+  /* right: 22px; */
   cursor: pointer;
   /* font-weight: bold; */
-  width: 70px;
-  height: 27px;
+  /* height: 27px; */
 }
 
 .lang, .logout-btn {
@@ -530,23 +548,8 @@ html, body {
   align-items: start;
 }
 
-.login .enter-btn, .login .main-setting{
-  width: auto;
-  height: 20px;
-  padding: 10px;
-  background-color: green;
-  border-radius: 15%;
-  display: inline;
-  position: absolute;
-  top: 4%;
-  left: 84%;
-  border: 2px solid rgb(14, 222, 94);
-  box-shadow: 7px 8px 6px 0px rgb(165 165 165 / 33%), 2px 3px 4px rgb(255 255 255 / 59%);
-}
-
 .login .main-setting {
   left: 94%;
-  color: black;
 }
 
 .login .enter-btn:hover{
@@ -1209,436 +1212,4 @@ html, body {
 
 .blog-text-area:hover .blog-write-content-input{
   background-color: rgba(146, 146, 146, 0.276);
-}
-
-/*
-************* Sumin *************
-*/
-.resume {
-  background-color: black;
-}
-
-.resume.resume-menu {
-  padding: 20px;
-  padding-left: 50px;
-  font-size: 50px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: auto;
-}
-.resume a{
-  text-decoration: none;
-  cursor: auto;
-}
-.resume.resume-menu label{
-  padding-right: 30px;
-  color: pink;
-}
-.resume.resume-menu label:not(.curr):hover {
-  cursor: pointer;
-  font-weight: bold;
-}
-.resume.resume-menu label.curr {
-  text-shadow: 4px 6px 6px #002bff;
-  font-weight: bold;
-  pointer-events: none;
-  color: skyblue;
-}
-
-.resume .back-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding-top: 20px;
-  padding-left: 50px;
-  width: auto;
-  height: auto;
-  font-size: 50px;
-  color: purple;
-  text-decoration: none;
-}
-
-.resume .back-label:hover {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.resume.resume-works, .resume.works{
-  padding: 50px;
-  padding-top: 90px;
-  overflow-y: scroll;
-  width: auto;
-  height: calc(100% - 140px);
-}
-
-.resume-about {
-  display: flex;
-  flex-direction: row;
-}
-
-.resume-right {
-  padding-top: 90px;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.resume-left {
-  padding-top: 90px;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
-
-.resume-left .character {
-  height: 60%;
-  color: white;
-  text-align: center;
-  font-size: 30pt;
-  line-height: 300pt;
-}
-
-.resume-left .title {
-  height: 40%;
-}
-
-.title * {
-  display: inline-block;
-  height: auto;
-  text-align: center;
-}
-
-.name {
-  font-size: 90pt;
-  color: pink;
-  text-shadow: 6px 6px 2px #d42323;
-}
-
-.job {
-  font-size: 40pt;
-  color: skyblue;
-  overflow: hidden;
-}
-
-.resume-right a {
-  height: auto;
-  width: auto;
-}
-
-.resume-right .info-board {
-  height: calc(75% - 116px);
-  width: calc(100% - 126px);
-  max-width: 730px;
-  margin: 30px;
-  padding: 30px;
-  padding-top: 20px;
-  background-color: rgb(35, 35, 35);
-  color: white;
-  border: 3px solid rgb(125, 78, 235);
-  border-radius: 10px;
-}
-
-.resume-right .info-board .txt-info {
-  overflow: scroll;
-}
-
-.resume-right .buttons {
-  width: 730px;
-  height: 20%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.resume-right .buttons > * {
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: end;
-}
-
-.resume-right .buttons .second-line-btns {
-  align-items: start;
-}
-
-.resume-right .buttons button {
-  width: 211px;
-  height: 86px;
-  /* background-color: rgb(35, 35, 35); */
-  font-size: 300%;
-  font-family: 'DOSGothic';
-  margin: 3%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border-radius: 6px;
-  background-color: #e74c3c;
-  position: relative;
-  display: inline-block;
-  /* border: 1px solid #e74c3c; */
-  color: pink;
-  border: 4px solid pink;
-  border: 0;
-  box-shadow: 0 0 0 3px #c63702 inset,
-  0 8px 0 0px #C24032,
-  0 8px 0 2px rgb(255 255 255 / 65%);
-}
-
-.resume-right .buttons .second-line-btns button {
-  border: 0;
-  box-shadow: none;
-  color: pink;
-  background-color: transparent;
-}
-
-.resume-right .buttons button:hover {
-  cursor: pointer;
-  /* background-color: rgb(20, 20, 20); */
-  /* border-width: 6px; */
-}
-
-.resume-right .buttons button:active {
-  /* background-color: rgb(85, 84, 84); */
-  top: 4px;
-  box-shadow: 0 0 0 1px #c63702 inset,
-  0 3px 0 1px #ac3224,
-  0 3px 0 2px rgb(255 255 255),
-  0 4px 8px 3px rgb(255 255 255);
-  text-shadow: 1px 1px 2px #fefefe;
-}
-
-.resume-right .buttons button.clicked {
-  /* background-color: rgb(85, 84, 84); */
-  top: 4px;
-  box-shadow: 0 0 0 1px #c63702 inset,
-  0 3px 0 1px #ac3224,
-  0 3px 0 2px rgb(255 255 255),
-  0 4px 8px 3px rgb(255 255 255);
-  text-shadow: 1px 1px 2px #fefefe;
-}
-
-/* .first-line-btns button { */
-  /* color: rgb(125, 78, 235); */
-  /* border: 4px solid rgb(125, 78, 235); */
-/* } */
-
-.resume-right .second-line-btns button {
-  margin-top: 0;
-}
-
-.info-board .txt-default {
-  font-size: 200%;
-  overflow: scroll;
-}
-
-.info-board .txt-skill{
-  display: flex;
-  flex-direction: column;
-  font-size: 200%;
-}
-
-.info-board .txt-skill > * {
-  height: auto;
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 10px;
-}
-
-.info-board label.info-board-title {
-  padding-bottom: 50px;
-  display: inline-block;
-  text-align: center;
-  height: auto;
-  width: 100%;
-  font-size: 70px;
-}
-
-.info-board .txt-skill label.title {
-  display: inline-block;
-  width: 30%;
-}
-
-.info-board .txt-skill .skill.even *{
-  color: rgb(198, 238, 218);
-}
-
-.info-board .txt-skill .skill *{
-  color: rgb(182, 216, 251);
-}
-
-.info-board .levels {
-  width: auto;
-}
-
-.info-board .levels > * {
-  margin-right: 10px;
-}
-
-.info-board .info-label {
-  height: auto;
-  margin-bottom: 1%;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.info-board .txt-info label:not(.info-board-title) {
-  display: inline-block;
-  width: 50%;
-  font-size: 150%;
-}
-
-.info-board .txt-info label.title {
-  font-size: 170%;
-  width: 20%;
-  color: rgb(205, 125, 242); 
-}
-
-.info-board .txt-info label.content {
-  color: rgb(101, 236, 187);
-}
-
-.info-board .txt-info label.content.second {
-  font-size: 120%;
-  color: skyblue;
-}
-
-.info-board .info-label.full {
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-
-.info-board .txt-info .full > label.title {
-  margin-bottom: 5px;
-}
-
-.info-board .txt-info .full > label {
-  width: auto;
-}
-
-.info-board .basic-info {
-  margin-bottom: 30px;
-  height: auto;
-}
-
-.resume-works {
-  font-size: 70px;
-  color: rgb(0, 255, 251);
-}
-
-.resume-works .title {
-  font-size: 150px;
-  color: pink;
-  height: auto;
-  text-shadow: 6px 6px 2px #d42323;
-}
-
-.resume-works label.work-experience, .resume-works label.project {
-  display: block;
-  width: auto;
-  height: auto;
-  margin: 30px;
-  color: white;
-  text-shadow: 4px 4px 1px #7575ff;
-}
-.resume-works label.work-experience:hover, .resume-works label.project:hover {
-  cursor: pointer;
-  color: rgb(43, 43, 249);
-}
-
-.resume.works *:not(a) {
-  font-size: 50px;
-  height: auto;
-  width: auto;
-  color: pink;
-}
-
-@media screen and (max-width:1023px) {
-  /* 모바일, 태블릿 */
-  .resume-about {
-    flex-direction: column;
-    overflow: scroll;
-    padding-top: 150px;
-  }
-
-  .resume-left .character{
-    height: 70%;
-  }
-
-  .resume-left .title {
-    height: 100%;
-  }
-
-  .resume-about > *{
-    width: 100%;
-    height: auto;
-  }
-
-  .resume-right .info-board {
-    height: 420px;
-    width: 400px;
-    overflow: scroll;
-  }
-
-  .resume-right {
-    align-items: center;
-    padding-top: 0;
-  }
-
-  .txt-skill *{
-    font-size: 90%;
-  }
-
-  .info-board label.info-board-title {
-    padding-bottom: 30px;
-    font-size: 30pt;
-  }
-
-  .resume-right .first-line-btns {
-    margin-bottom: 20px;
-    height: auto;
-  }
-
-  .resume-right .buttons {
-    width: 558px; 
-    height: 250px;
-  }
-
-  .resume-right .buttons button{
-    font-size: 20pt;
-    width: 130px;
-    height: 55px;
-  }
-
-  .resume.resume-menu {
-    font-size: 30pt;
-    text-align: center;
-    padding-left: 0;
-    left: auto;
-  }
-
-  .resume-works .title {
-    font-size: 40pt;
-    width: auto;
-    overflow: visible;
-    text-align: center;
-    text-shadow: 4px 4px 1px #d42323;
-  }
-
-  .resume.resume-works, .resume.works {
-    padding-left: 0;
-    padding-top: 150px;
-  }
-
-  .resume-works label.work-experience, .resume-works label.project {
-    font-size: 25pt;
-    text-align: center;
-    text-shadow: 3px 3px 1px #7575ff
-  }
-
-  .info-board .txt-default {
-    font-size: 19pt;
-  }
-
 }

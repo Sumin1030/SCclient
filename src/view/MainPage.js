@@ -55,9 +55,9 @@ function MainPage(props) {
             <div className="main-right">
                 <div className='langBtn'>
                     <Setting/>
-                    <div className='toppost'>
+                    <button className='toppost'>
                         <div className="logout-btn" onClick={logout}>{useTranslator("mainPage.logout")}</div>
-                    </div>
+                    </button>
                 </div>
                 <GuestBook/>
                 <TopPost/>

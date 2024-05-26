@@ -21,7 +21,7 @@ const language = {
         return "KOR"
     },
     get eng() {
-        return "ENG"
+        return "영어"
     },
     get eng_obj() {
         return {

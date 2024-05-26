@@ -22,7 +22,8 @@
     },
     "info" : {
         "visitor": "방문자 수",
-        "date": "날짜"
+        "date": "날짜",
+        "canada": "캐나다"
     },
     "users" : {
         "date": "가입 날짜",

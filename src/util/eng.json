@@ -22,7 +22,8 @@
     },
     "info" : {
         "visitor": "Visitor",
-        "date": "Date"
+        "date": "Date",
+        "canada": "CANADA"
     },
     "users" : {
         "date": "DATE",
