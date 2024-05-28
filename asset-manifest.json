@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-deploy-test/static/css/main.721768a3.css",
-    "main.js": "/react-deploy-test/static/js/main.d5667309.js",
+    "main.js": "/react-deploy-test/static/js/main.0a9e94fb.js",
     "static/media/DOSGothic.ttf": "/react-deploy-test/static/media/DOSGothic.56e0d614bf83161e6e79.ttf",
     "static/media/puzzledata.gif": "/react-deploy-test/static/media/puzzledata.ec58ca869f932523dd1a.gif",
     "static/media/pz2map.gif": "/react-deploy-test/static/media/pz2map.76732a7ec5599ce365f0.gif",
@@ -10,10 +10,10 @@
     "static/media/SuminHeo.pdf": "/react-deploy-test/static/media/SuminHeo.9129d67e4ce8bb3c8500.pdf",
     "index.html": "/react-deploy-test/index.html",
     "main.721768a3.css.map": "/react-deploy-test/static/css/main.721768a3.css.map",
-    "main.d5667309.js.map": "/react-deploy-test/static/js/main.d5667309.js.map"
+    "main.0a9e94fb.js.map": "/react-deploy-test/static/js/main.0a9e94fb.js.map"
   },
   "entrypoints": [
     "static/css/main.721768a3.css",
-    "static/js/main.d5667309.js"
+    "static/js/main.0a9e94fb.js"
   ]
 }
