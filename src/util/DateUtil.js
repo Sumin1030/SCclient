@@ -105,12 +105,12 @@ export default {
         };   
     },
     addDate(date, numOfDays) {
-        return new Date(this.checkDate_time(date) + numOfDays*this.DAY_TO_MILLISECONDS);
+        return this.calcDate(date, numOfDays);
     },
     subDate(date, numOfDays) {
-        return new Date(this.checkDate_time(date) - numOfDays*this.DAY_TO_MILLISECONDS)
+        return this.calcDate(date, -numOfDays);
     },
     calcDate(date, numOfDays) {
-        return new Date(this.checkDate_time(date) + numOfDays*this.DAY_TO_MILLISECONDS);
+        return new Date(date.getFullYear(), date.getMonth(), date.getDate() + numOfDays);
     }
 };

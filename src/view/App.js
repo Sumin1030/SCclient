@@ -59,12 +59,17 @@ function App() {
 
   // 두 번째 인자에 빈 배열로 넣으면 처음 렌더링 시에만 함수 호출됨.
   useEffect(()=> {
+    console.log(language.getLangObj);
       axios.get(`/api/isLogined`).then((res) => {
         // console.log('lang', res.data.lang, 'state', langState);
         // 세션에 language 초기값 저장
         const lang = res.data.lang;
         console.log(lang);
-        if(lang && langState != lang && langState != lang?.val ) dispatch(languageActions.changeLang(language.getLangObj(lang)));
+        if(lang && langState != lang && langState != lang?.val) {
+          const langObj = language.getLangObj(lang);
+          console.log(langObj);
+          dispatch(languageActions.changeLang(langObj));
+        }
         if(isLogined == 'enter') {
           setContent(getMain());
         }

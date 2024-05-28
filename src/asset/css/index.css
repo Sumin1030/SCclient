@@ -220,7 +220,7 @@ html, body {
   font-family: 'DOSGothic';
   font-size: 100pt;
   color: rgba(170, 170, 170, 0.769);
-  text-shadow: 5px 5px 1px rgba(255, 2, 19, 0.599), -1px -1px 1px #ffffff;
+  text-shadow: 5px 5px 1px #00fbff, -1px -1px 1px #ffffff;
   letter-spacing: 20pt;
   text-align: center;
 }
@@ -340,10 +340,6 @@ html, body {
   font-family: 'DOSGothic';
 }
 
-.toppost {
-  width: 80px;
-}
-
 .login .enter-btn, .login .main-setting {
   width: auto;
   height: auto;
@@ -359,10 +355,12 @@ html, body {
 
 .main-setting {
   right: 110px;
+  width: 55px;
 }
 
 .toppost {
   right: 25px;
+  width: 80px;
 }
 
 .main-setting:hover{
