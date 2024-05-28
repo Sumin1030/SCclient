@@ -1,9 +1,10 @@
 import DDay from './DDay';
 import CurrentTime from './CurrentTime';
+import { useTranslator } from '../util/LanguageUtil';
 
 function DateTime() {
     // 입국날짜 및 나라
-    const country = 'CANADA', startTime = new Date('2023-08-15');
+    const country = useTranslator('info.canada'), startTime = new Date('2023-08-15');
     // // 토론토 기준 현재시간
     // let curr = new Date();
 

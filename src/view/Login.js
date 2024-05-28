@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import axios from "../util/axiosUtil";
 import DateUtil from '../util/DateUtil';
 import Setting from '../component/Setting';
@@ -244,7 +244,7 @@ ${typeOption}`,
                     </div>
                 </div>
             </div>
-            <div className="enter-btn" onClick={clickEnter}>{useTranslator("login.magicPass")}</div>
+            <button className="enter-btn" onClick={clickEnter}>{useTranslator("login.magicPass")}</button>
         </div>
     );
 }

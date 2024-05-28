@@ -22,7 +22,8 @@
     },
     "info" : {
         "visitor": "Visitor",
-        "date": "Date"
+        "date": "Date",
+        "canada": "CANADA"
     },
     "users" : {
         "date": "DATE",
@@ -30,14 +31,14 @@
         "message": "MESSAGE"
     },
     "login" : {
-        "sayHi" : " Hi. this is fixed-term diary made by Sumin.\n If you want to join us, type(y) in the ID field.",
-        "signUp": "\n Ready to Sign Up.. \n ID must be consist of only alphabet and number. \n And ID must be at least 5 characters.",
+        "sayHi" : " Hi there. this is Sumin in Canada.\n If you want to join us, type (y) in the ID field.",
+        "signUp": "\n Ready to Sign Up.. \n ID must be consist of alphabet and number. \n And ID must be at least 5 characters.",
         "id": "ID:",
         "pw": "PW:",
         "name": "NAME:",
         "msg": "MESSAGE:",
         "answer": "ANSWER:",
-        "top": "Welcome to Sumin's Page",
+        "top": "Welcome to Sumin in Canada",
         "magicPass": "MAGIC PASS",
         "rewritePW": " PW has to be more than 8 letters",
         "wrongPW":  " Incorrect Password.",

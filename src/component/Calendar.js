@@ -1,6 +1,11 @@
 import DateUtil from '../util/DateUtil';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function Calendar() {
+    const [table, setTable] = useState([]);
+    let contribution = [];
+    let con_idx = 0;
     const today = new Date();
     const end = new Date(today.getFullYear(), today.getMonth(), today.getDate());
     // const end_day = end.getDay();
@@ -73,20 +78,27 @@ function Calendar() {
                         lastMonth = thisMonth;
                     }
                     if(_today >= start && _today <= end) {
-                        let contribution = Math.floor(Math.random()*10);
-                        if(contribution == 0) contribution = 'No';
+                        // let contribution = Math.floor(Math.random()*10);
+                        let _contribution = 0;
+                        const date = `${_today.getFullYear()}-${DateUtil.timeFormat(_today.getMonth()+1)}-${DateUtil.timeFormat(_today.getDate())}`;
+                        if(contribution.length > 0 && contribution[con_idx].DAY == _today.getDay() && contribution[con_idx].DATE == date) {
+                            console.log(contribution[con_idx].DATE, contribution[con_idx].DAY, date, _today.getDay());
+                            _contribution = contribution[con_idx].COUNT;
+                            if(contribution.length-1 > con_idx ) con_idx++;
+                        }
+                        if(_contribution == 0) _contribution = 'No';
                         let tooltipClass = "calendar-tooltip";
                         if(i < 3) tooltipClass += " left";
                         else if(i < 6) tooltipClass += " left-2";
                         else if(i < 20) tooltipClass += " left-3";
                         // 최근 1년에 해당하는 날짜
-                        td = <td key={i} className='td date' idx={`${i}`} date={`${_today.getFullYear()}-${thisMonth+1}-${_today.getDate()}`} style={{backgroundColor: setColor(contribution)}}>
-                            <span className={tooltipClass}>{contribution} contributions on {DateUtil.DAYS[_today.getDay()]}, {DateUtil.MONTHS[_today.getMonth()]} {_today.getDate()}, {_today.getFullYear()}</span>
+                        td = <td key={i} className='td date' idx={`${i}`} date={`${_today.getFullYear()}-${_today.getMonth()+1}-${_today.getDate()}`} style={{backgroundColor: setColor(_contribution)}}>
+                            <span className={tooltipClass}>{_contribution} _contributions on {DateUtil.DAYS[_today.getDay()]}, {DateUtil.MONTHS[_today.getMonth()]} {_today.getDate()}, {_today.getFullYear()}</span>
                         </td>;
                     } else {
                         // 범위 밖의 날짜
-                        let contribution = Math.floor(Math.random()*10);
-                        if(contribution == 0) contribution = 'No';
+                        let _contribution = Math.floor(Math.random()*10);
+                        if(_contribution == 0) _contribution = 'No';
                         let tooltipClass = "calendar-tooltip";
                         if(i < 6) tooltipClass += " left";
                         td = <td className='td' idx={`${i}`} key={i}></td>;
@@ -120,17 +132,23 @@ function Calendar() {
             if(td) tdArr.push(td);
         }
         const thead = <tr className='tr'>{tdArr}</tr>;
-
-        return (
+        setTable(
             <table>
                 <thead className='thead'>{thead}</thead>
                 <tbody className='tbody'>{tbody}</tbody>
             </table>
         );
     }
+
+    useEffect(()=> {
+        axios.get(`/api/getContribution?date=${start.getFullYear()}-${start.getMonth()}-${start.getDate()}`).then((res) => {
+            contribution = res.data;
+            makeTable();
+        });
+    }, []);
     return (
         <div className="calendar">
-            {makeTable()}
+            {table}
         </div>
     );
 }

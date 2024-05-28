@@ -1,8 +1,14 @@
+@import './resume.css';
 @font-face {
   font-family: 'DOSGothic';
   src: url('../fonts/DOSGothic.ttf');
   font-weight: normal;
   font-style: normal;
+}
+
+*:not(table, table *, .calender, .resume, .resume *) {
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -16,11 +22,6 @@ html, body {
   position: relative;
 }
 
-*:not(table, table *, .calender) {
-  width: 100%;
-  height: 100%;
-}
-
 .app {
   position: fixed;
 }
@@ -31,7 +32,7 @@ html, body {
 }
 
 .scroll {
-  overflow: scroll;
+  overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -92,7 +93,7 @@ html, body {
 }
 
 .info .d-day{
-  font-family: 'Courier New', Courier, monospace;
+  /* font-family: 'Courier New', Courier, monospace; */
 }
 .info-title{
   height: 25px;
@@ -216,28 +217,32 @@ html, body {
   height: 60%;
   display: flex;
   flex-direction: column;
+  font-family: 'DOSGothic';
+  font-size: 100pt;
+  color: rgba(170, 170, 170, 0.769);
+  text-shadow: 5px 5px 1px #00fbff, -1px -1px 1px #ffffff;
+  letter-spacing: 20pt;
+  text-align: center;
 }
 
 .d-day .country {
-  /* font-size: 16pt; */
+  font-size: 120pt;
+  letter-spacing: 8pt;
+  height: 50%;
+}
+
+/* .d-day .country {
   font-size: 0.65vw;
   font-weight: bold;
   height: 60%;
-  color: rgb(255, 1, 107);
-}
-
-.d-day .date {
+}*/
+/* .d-day .date {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 73%;
 }
 
-.d-day .date * {
-  font-size: 0.9vw;
-  /* font-size: 0.48vw; */
-  font-weight: bold;
-}
 .d-day .date .d {
   width: 19%;
 }
@@ -250,7 +255,7 @@ html, body {
 }
 .d-day .date .num.num1 {
   width: 17%;
-}
+} */
 /* 3d
 .d-day .date .d {
   font-size: 0.48vw;
@@ -273,7 +278,8 @@ html, body {
 
 .d-day .secondRow {
   display: flex;
-  height: 40%;
+  /* height: 40%; */
+  height: 50%;
 }
 
 .d-day .secondRow .flag {
@@ -320,44 +326,54 @@ html, body {
 }
 
 .main-setting, .toppost {
-  border: 2px solid rgb(14, 222, 94);
-  box-shadow: 7px 8px 6px 0px rgb(165 165 165 / 33%), 2px 3px 4px rgb(255 255 255 / 59%);
-  color: black;
   display: inline;
-  width: 65px;
-  padding-top: 3px;
+  width: auto;
+  height: auto;
+  padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: green;
-  border-radius: 15%;
   margin: 5px;
   margin-bottom: 0;
   position: absolute;
-  height: 25px;
+  color: #44ff44;
+  background-color: #515151d9;
+  font-family: 'DOSGothic';
+}
+
+.login .enter-btn, .login .main-setting {
+  width: auto;
+  height: auto;
+  padding: 10px;
+  background-color: #515151d9;
+  display: inline;
+  position: absolute;
+  top: 4%;
+  left: 84%;
+  color: #44ff44;
+  font-family: 'DOSGothic';
 }
 
 .main-setting {
-  right: 125px;
-  width: auto;
+  right: 110px;
+  width: 55px;
 }
 
 .toppost {
   right: 25px;
+  width: 80px;
 }
 
 .main-setting:hover{
   cursor: pointer;
   /* font-weight: bold; */
-  right: 123px;
-  width: 29px;
-  height: 27px;
+  /* right: 123px; */
+  /* height: 27px; */
 }
 .toppost:hover{
-  right: 22px;
+  /* right: 22px; */
   cursor: pointer;
   /* font-weight: bold; */
-  width: 70px;
-  height: 27px;
+  /* height: 27px; */
 }
 
 .lang, .logout-btn {
@@ -515,7 +531,7 @@ html, body {
   flex: 1 1;
 }
 
-.title {
+.input-field .title {
   color: green;
   /* font-family: 'Courier New', Courier, monospace; */
   font-size: 12pt;
@@ -530,23 +546,8 @@ html, body {
   align-items: start;
 }
 
-.login .enter-btn, .login .main-setting{
-  width: auto;
-  height: 20px;
-  padding: 10px;
-  background-color: green;
-  border-radius: 15%;
-  display: inline;
-  position: absolute;
-  top: 4%;
-  left: 84%;
-  border: 2px solid rgb(14, 222, 94);
-  box-shadow: 7px 8px 6px 0px rgb(165 165 165 / 33%), 2px 3px 4px rgb(255 255 255 / 59%);
-}
-
 .login .main-setting {
   left: 94%;
-  color: black;
 }
 
 .login .enter-btn:hover{

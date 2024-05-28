@@ -1,0 +1,565 @@
+
+/*
+************* resume *************
+*/
+
+*:not(table, table *, .calender) {
+    width: 100%;
+    height: 100%;
+  }
+
+.resume {
+    background-color: black;
+  }
+  
+  .resume.resume-menu {
+    padding: 20px;
+    padding-left: 50px;
+    font-size: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+  }
+  .resume a{
+    text-decoration: none;
+    cursor: auto;
+  }
+  .resume.resume-menu label{
+    margin-right: 30px;
+    color: #1c8eff;
+    font-style: italic;
+  }
+  .resume.resume-menu label:not(.curr):hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .resume.resume-menu label.curr {
+    text-shadow: 1px 1px 1px #003169, -1px -1px 1px #ffffff;
+    /* 글자색 gray였을 때 */
+    /* text-shadow: 1px 1px 1px black, -1px -1px 1px white, -2px 2px 5px #FFFFFF; */
+    /* 밑에 조명 */
+    /* text-shadow: -1px -1px 1px white, -2px 2px 5px #FFFFFF;
+    box-shadow: rgb(255 232 40 / 44%) 0px -45px 40px -30px inset; */
+    pointer-events: none;
+    text-decoration:underline;
+  }
+  
+  /* .resume.resume-menu label{
+    color: #ff738c;
+  }
+  .resume.resume-menu label.curr {
+    text-shadow: 2px 2px 4px #ffffff, -2px -2px 4px #ffffff;
+    color: #ff738c;
+  } */
+  
+  .resume .back-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    padding-left: 50px;
+    height: auto;
+    font-size: 50px;
+    color: purple;
+    text-decoration: none;
+  }
+  
+  .resume .back-label:hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .resume-about, .resume.resume-works, .resume.works {
+    padding: 50px;
+    padding-top: 90px;
+    width: auto;
+    height: calc(100% - 140px);
+  }
+  
+  .resume.resume-works, .resume.works {
+    overflow-y: scroll;
+  }
+  
+  .resume-left {
+    /* height: 190px; */
+    height: 240px;
+    display: flex;
+    align-items: end;
+  }
+  
+  .resume-right {
+    /* height: calc(100% - 200px); */
+    height: calc(100% - 250px);
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    /* align-items: center; */
+  }
+  .resume-right.smooth {
+    transition: transform 0.5s ease-in-out;
+  }
+  /* .resume-left .character {
+    height: auto;
+    max-height: 60%;
+    color: white;
+    text-align: center;
+    font-size: 30pt;
+    line-height: 300pt;
+  } */
+  
+  .resume-left > * {
+    width: 50%;
+  }
+  
+  .resume-left .title {
+    height: auto;
+  }
+  
+  .title * {
+    display: inline-block;
+    height: auto;
+  }
+  
+  .name {
+    font-size: 150px;
+    color: pink;
+    text-shadow: 6px 6px 2px #d42323;
+  }
+  
+  .job {
+    font-size: 70px;
+    color: rgb(199 199 255);
+    text-shadow: 4px 4px 1px purple;
+  }
+  
+  .name:hover, .job:hover {
+    cursor: pointer;
+    color: rgb(43, 43, 249);
+  }
+  
+  .resume-right a {
+    height: auto;
+    width: auto;
+  }
+  
+  .resume-right .info-board {
+    height: calc(100% - 90px);
+    min-width: calc(100% - 126px);
+    /* max-width: 730px; */
+    width: calc(100% - 60px);
+    margin: 35px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    padding: 30px;
+    background-color: rgb(33 33 33);
+    color: white;
+    /* border: 5px solid rgb(125, 78, 235); */
+    border-radius: 50px;
+    font-size: 45px;
+  }
+  
+  .resume-left .buttons .first-line-btns {
+    /* height: 135px; */
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+  
+  .resume-left .buttons .second-line-btns {
+    align-items: start;
+  }
+  
+  .resume-left .buttons button {
+    width: 25%;
+    height: 85px;
+    font-size: 300%;
+    font-family: 'DOSGothic';
+    margin: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 6px;
+    color: #d9a3ad;
+    position: relative;
+    display: inline-block;
+    background-color: #923025;
+    border: 0;
+    box-shadow:0px -3px 0px 2px #7f2920 inset, 0 10px 0 0px #471813, 0 10px 0 2px rgb(255 255 255 / 47%);
+    text-shadow: 1px 1px 1px #d05656, -1px -1px 1px #d25858;
+  }
+  
+  .resume-left .buttons .second-line-btns button {
+    border: 0;
+    box-shadow: none;
+    color: pink;
+    background-color: transparent;
+  }
+  
+  .resume-left .buttons button:hover {
+    cursor: pointer;
+    color: pink;
+    background-color: #ce4536;
+    box-shadow: 3px -2px 0px 2px #b73d30 inset,
+    0 10px 0 0px #9c352a,
+    0 10px 0 2px #ffc4aeca,
+    0 9px 10px 2px #FFC5AE;
+    text-shadow: 1px 1px 1px #ff6b6b,
+    -1px -1px 1px #ff6b6b,
+    1px 1px 3px #ffdee4,
+    -1px -1px 3px #ffdee4;
+    /* background-color: rgb(20, 20, 20); */
+    /* border-width: 6px; */
+  }
+  
+  .resume-left .buttons button:active, .resume-left .buttons button.clicked {
+    /* background-color: rgb(85, 84, 84); */
+    top: 4px;
+    color: pink;
+    background-color: #e74c3c;
+    box-shadow: 0px -3px 0px 2px #d84737 inset, 0px 6px 0 0px #ac3224, 0px 6px 0 2px #ffc4aeca, 0 4px 40px 4px #f9b79c;
+    text-shadow: 1px 1px 1px #ff6b6b,
+    -1px -1px 1px #ff6b6b,
+    1px 1px 3px #ffdee4,
+    -1px -1px 3px #ffdee4;
+  }
+
+  .resume-left .buttons button:active {
+    top: 7px;
+    /* color: pink;
+    background-color: #e74c3c;
+    text-shadow: 1px 1px 1px #ff6b6b,
+    -1px -1px 1px #ff6b6b,
+    1px 1px 3px #ffdee4,
+    -1px -1px 3px #ffdee4; */
+    box-shadow: 0px -3px 0px 1px #d84737 inset, 0px 2px 0 0px #b53628, 0px 3px 1px 2px #fabda6, 0 4px 40px 5px #FFC5AE;
+  }
+  
+  /* .first-line-btns button { */
+    /* color: rgb(125, 78, 235); */
+    /* border: 4px solid rgb(125, 78, 235); */
+  /* } */
+  
+  .resume-right .second-line-btns button {
+    margin-top: 0;
+  }
+  
+  .info-board .txt-default {
+    font-size: 80px;
+  }
+  
+  /********** scroll-bar **************/
+  .scroll.vertical{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scroll.horizontal{
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .scroll.visible {
+    scrollbar-width: auto;
+  }
+
+  .scroll.visible::-webkit-scrollbar {
+    display: block;
+    width: 10px;
+  }
+  
+  .scroll.visible::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+      background-color:#4242f3;
+  }
+  
+  .scroll.visible::-webkit-scrollbar-thumb {
+    background-color:#9898ec;
+  }
+  
+  .scroll.visible::-webkit-scrollbar-track {
+    background-color: white;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    background-clip: padding-box;
+  }
+  
+  .info-board .txt-skill{
+    display: flex;
+    flex-direction: column;
+    font-size: 200%;
+  }
+  
+  .info-board .txt-skill > * {
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+  }
+  
+  .info-board label.info-board-title {
+    padding-bottom: 50px;
+    display: inline-block;
+    text-align: center;
+    height: auto;
+    width: 100%;
+    font-size: 70px;
+  }
+  
+  .info-board .txt-skill label.title {
+    display: inline-block;
+    width: 30%;
+  }
+  
+  .info-board .txt-skill .skill.even *{
+    color: rgb(198, 238, 218);
+  }
+  
+  .info-board .txt-skill .skill *{
+    color: rgb(182, 216, 251);
+  }
+  
+  .info-board .levels {
+    width: auto;
+  }
+  
+  .info-board .levels > * {
+    margin-right: 10px;
+  }
+  
+  .info-board .info-label {
+    height: auto;
+    margin-bottom: 1%;
+    display: flex;
+    /* justify-content: space-evenly; */
+  }
+  
+  .info-board .txt-info label:not(.info-board-title) {
+    display: inline-block;
+    width: 50%;
+  }
+  
+  .info-board .txt-info label.title {
+    font-size: 60px;
+    width: 20%;
+    color: rgb(205, 125, 242); 
+  }
+  
+  .info-board .txt-info label.content {
+    /* color: rgb(101, 236, 187); */
+    color: white;
+  }
+  
+  .info-board .txt-info label.content.second {
+    font-size: 120%;
+    color: skyblue;
+  }
+  
+  .info-board .info-label.full {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .info-board .txt-info .full > label.title {
+    margin-bottom: 5px;
+  }
+  
+  .info-board .txt-info .full > label {
+    width: auto;
+  }
+  
+  .info-board .basic-info {
+    margin-bottom: 30px;
+    height: auto;
+  }
+  
+  .resume-works .title {
+    font-size: 150px;
+    color: pink;
+    height: auto;
+    text-shadow: 6px 6px 2px #d42323;
+  }
+  
+  .resume-works > a {
+    display: inline-block;
+    height: auto;
+  }
+  
+  .resume-works label.work-experience, .resume-works label.project {
+    font-size: 70px;
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 30px;
+    color: white;
+    text-shadow: 4px 4px 1px #7575ff;
+  }
+  .resume-works label.work-experience:hover, .resume-works label.project:hover {
+    cursor: pointer;
+    color: rgb(43, 43, 249);
+  }
+  
+  .resume.works .title{
+    font-size: 100px;
+    color: pink;
+  }
+
+  .resume.works .company-description {
+    color: pink;
+  }
+
+  .resume.works {
+    font-size: 50px;
+    color: white;
+  }
+
+  .resume.works .summary {
+    font-size: 40px;
+    margin-top: 30px;
+  }
+
+  .resume.works .summary-content {
+    display: flex;
+  }
+  
+  .resume.works *:not(.back-link){
+    height: auto;
+    width: auto;
+  }
+
+  .resume.works .work-image {
+    max-width: 80%;
+  }
+
+  .resume.works .detail {
+    margin-top: 100px;
+  }
+  
+  @media screen and (max-width:1500px) {
+    .resume-left {
+      flex-direction: column;
+      align-items: start;
+      height: 375px;
+    }
+    .resume-left > * {
+      width: 100%;
+    }
+    .resume-left .buttons {
+      width: 730px;
+    }
+    .resume-right {
+      /* height: calc(100% - 385px); */
+      height: 50%;
+    }
+  }
+  
+  @media screen and (max-width:1023px) {
+    /* 모바일, 태블릿 */
+    .resume-about > *{
+      height: auto;
+    }
+  
+    .resume-about {
+      display: flex;
+      flex-direction: column;
+      padding-top: 150px;
+      text-align: center;
+    }
+  
+    .resume-left {
+      padding-top: 0;
+      /* padding-bottom: 40px; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .resume-left .character{
+      height: 70%;
+    }
+  
+    .resume-right .info-board {
+      height: 420px;
+      /* width: 400px; */
+      /* margin-top: 0; */
+      font-size: 30px;
+    }
+  
+    .info-board .txt-info label.title {
+      font-size: 30px;
+    }
+  
+    .resume-right {
+      padding-top: 0;
+    }
+  
+    .txt-skill *{
+      font-size: 30px;
+    }
+  
+    .info-board label.info-board-title {
+      padding-bottom: 30px;
+      font-size: 30pt;
+    }
+  
+    .resume-left .first-line-btns {
+      margin: 10px;
+      justify-content: center;
+      height: auto;
+    }
+  
+    .resume-left .buttons {
+      width: 558px;
+      height: auto;
+      /* height: 250px; */
+    }
+  
+    .resume-left .buttons button{
+      font-size: 20pt;
+      width: 130px;
+      height: 55px;
+      margin: 10px;
+    }
+  
+    .resume.resume-menu {
+      font-size: 30pt;
+      text-align: center;
+      padding-left: 0;
+    }
+  
+    .resume-works .title {
+      font-size: 40pt;
+      width: auto;
+      overflow: visible;
+      text-align: center;
+      text-shadow: 4px 4px 1px #d42323;
+    }
+  
+    .resume.resume-works, .resume.works {
+      padding-left: 0;
+      padding-top: 150px;
+    }
+  
+    .resume-works label.work-experience, .resume-works label.project {
+      font-size: 25pt;
+      text-align: center;
+      text-shadow: 3px 3px 1px #7575ff
+    }
+  
+    .info-board .txt-default {
+      font-size: 19pt;
+    }
+  
+    @media screen and (max-width:800px) {
+      .resume-left .title .name {
+        font-size: 85px;
+      }
+      .resume-left .title .job {
+        font-size: 40px;
+      }
+    }
+  
+  }

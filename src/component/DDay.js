@@ -3,7 +3,6 @@ import {D, Plus, NUMBER} from "../resource/text/day";
 import CANADAFLAG from "../resource/text/canadaFlag";
 import { useEffect, useState } from "react";
 import DateUtil from "../util/DateUtil";
-
 function DDay(props) {
     const getInnerHTML = (txt) => {
         return {
@@ -15,23 +14,25 @@ function DDay(props) {
     const startTime = props.startTime;
 
     // d+ 디데이 날짜 계산
-    const getNum = (startTime) => {
-        let num = DateUtil.getTimeDiff(startTime, new Date()).day;
-        let _num = 0;
-        const _numArr = [];
-        let key = 1;
-        while(num >= 1) {
-            _num = num % 10;
-            _numArr.push(<div key={key++} className={`num num${_num}`} dangerouslySetInnerHTML={getInnerHTML(NUMBER[_num])}></div>);
-            num = Math.floor(num /= 10);
-        }
-        if(_numArr.length == 0) {
-            _numArr.push(<div key={key++} className={`num num${_num}`} dangerouslySetInnerHTML={getInnerHTML(NUMBER[_num])}></div>);
-        }
-        return _numArr.reverse();
-    }
+    // const getNum = (startTime) => {
+    //     let num = DateUtil.getTimeDiff(startTime, new Date()).day;
+    //     let _num = 0;
+    //     const _numArr = [];
+    //     let key = 1;
+    //     while(num >= 1) {
+    //         _num = num % 10;
+    //         // _numArr.push(<div key={key++} className={`num num${_num}`} dangerouslySetInnerHTML={getInnerHTML(NUMBER[_num])}></div>);
+    //         _numArr.push(<div key={key++} className={`num num${_num}`}>{_num}</div>);
+    //         num = Math.floor(num /= 10);
+    //     }
+    //     if(_numArr.length == 0) {
+    //         // _numArr.push(<div key={key++} className={`num num${_num}`} dangerouslySetInnerHTML={getInnerHTML(NUMBER[_num])}></div>);
+    //         _numArr.push(<div key={key++} className={`num num${_num}`}>{_num}</div>);
+    //     }
+    //     return _numArr.reverse();
+    // }
 
-    const [numArr, setNumArr] = useState([]);
+    // const [numArr, setNumArr] = useState([]);
 
     const startInterval = (callback, interval) => {
         callback();
@@ -40,8 +41,7 @@ function DDay(props) {
     }
     useEffect(() => {
         const interval = startInterval(() => {
-            console.log(getNum(startTime));
-            setNumArr(getNum(startTime));
+            // setNumArr(getNum(startTime));
         }, DateUtil.HOUR_TO_MILLISECONDS);
 
         return () => clearInterval(interval);
@@ -49,16 +49,17 @@ function DDay(props) {
 
     return (
         <div className='d-day'>
-            <div className='country' dangerouslySetInnerHTML={getInnerHTML(CANADA)}></div>
+            {/* <div className='country' dangerouslySetInnerHTML={getInnerHTML(CANADA)}></div> */}
+            <div className='country'>{country}</div>
             <div className='secondRow'>
                 <div className='date'>
-                    <div className='d' dangerouslySetInnerHTML={getInnerHTML(D)}></div>
-                    <div className='plus' dangerouslySetInnerHTML={getInnerHTML(Plus)}></div>
-                    {numArr}
+                    {/* <div className='d' dangerouslySetInnerHTML={getInnerHTML(D)}></div>
+                    <div className='plus' dangerouslySetInnerHTML={getInnerHTML(Plus)}></div> */}
+                    D+{DateUtil.getTimeDiff(startTime, new Date()).day}
                 </div>
-                <div className='flag'>
+                {/* <div className='flag'>
                     {CANADAFLAG}
-                </div>
+                </div> */}
             </div> 
         </div>
     );
