@@ -17,7 +17,7 @@ function Calendar() {
     const isMonthLabelNum = true;
     const isDayLabelShort = true; // 바꾸면 .first width 수정 필요
     // 블로그 잔디 기준 및 색상 설정
-    const levelOfContribution = [0, 5, 8, 9];
+    const levelOfContribution = [0, 2, 4, 6];
     // 흰색 계열
     // const levelOfColor = ['rgb(50, 50, 50)', 'rgb(85, 85, 85)', 'rgb(125, 125, 125)', 'rgb(160, 160, 160)', 'rgb(200, 200, 200)'];
     // 초록 계열
