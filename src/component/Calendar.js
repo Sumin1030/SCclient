@@ -93,7 +93,7 @@ function Calendar() {
                         else if(i < 20) tooltipClass += " left-3";
                         // 최근 1년에 해당하는 날짜
                         td = <td key={i} className='td date' idx={`${i}`} date={`${_today.getFullYear()}-${_today.getMonth()+1}-${_today.getDate()}`} style={{backgroundColor: setColor(_contribution)}}>
-                            <span className={tooltipClass}>{_contribution} _contributions on {DateUtil.DAYS[_today.getDay()]}, {DateUtil.MONTHS[_today.getMonth()]} {_today.getDate()}, {_today.getFullYear()}</span>
+                            <span className={tooltipClass}>{_contribution} contributions on {DateUtil.DAYS[_today.getDay()]}, {DateUtil.MONTHS[_today.getMonth()]} {_today.getDate()}, {_today.getFullYear()}</span>
                         </td>;
                     } else {
                         // 범위 밖의 날짜
