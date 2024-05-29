@@ -407,8 +407,8 @@
     color: pink;
   }
 
-  .resume.works .company-description {
-    color: pink;
+  .resume.works .company-description, .resume.works .project-summary {
+    font-size: 30px;
   }
 
   .resume.works {
@@ -416,13 +416,25 @@
     color: white;
   }
 
-  .resume.works .summary {
-    font-size: 40px;
+  .resume.works .summary-title {
     margin-top: 30px;
+    font-size: 35px;
+    color: #93adff;
+  }
+
+  .resume.works .summary {
+    font-size: 35px;
+    margin-top: 5px;
+    color: white;
+    /* color: #c5b5ff; */
   }
 
   .resume.works .summary-content {
     display: flex;
+  }
+
+  .resume.works .summary-content .content{
+    margin-bottom: 4px;
   }
   
   .resume.works *:not(.back-link){
@@ -430,8 +442,22 @@
     width: auto;
   }
 
-  .resume.works .work-image {
+  .resume.works .work-image, .resume.works .project_img {
     max-width: 80%;
+  }
+
+  .resume.works .project-link {
+    margin-top: 40px;
+    text-align: center;
+    font-style: italic;
+    color: white;
+    text-shadow: 3px 3px 1px #7575ff;
+  }
+
+  .resume.works .project-link a:hover {
+    /* text-decoration: underline; */
+    color: rgb(43, 43, 249);
+    cursor: pointer;
   }
 
   .resume.works .detail {

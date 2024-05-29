@@ -5,8 +5,9 @@ import axios from "../util/axiosUtil";
 import BlogWrite from '../component/BlogWrite';
 import { useTranslator } from "../util/LanguageUtil";
 
-let selectedPostDom = null;
 let newFlag = false;
+let isLogined = false;
+let selectedPostDom = null;
 function Blog(props) {
     const [blogArr, setBlogArr] = useState([]);
     const [selectedPost, setSelectedPost] = useState(null);
@@ -35,17 +36,36 @@ function Blog(props) {
             let idx = 0;
             let firstFlag = true;
             console.log("selectedPostDom", selectedPostDom);
-            result.forEach((blog) => {
-                let _blog = <BlogList key={idx++} content={blog.TITLE} date={blog.DATE} sq={blog.BLOG_SQ} className='posting' onClick={(e, sq) => onTitleClick(e, sq)}></BlogList>
-                if(firstFlag && !selectedPostDom) {
-                    console.log("자동 선택");
-                    _blog = <BlogList className="posting selected-post" key={idx++} content={blog.TITLE} date={blog.DATE} sq={blog.BLOG_SQ} onClick={(e, sq) => onTitleClick(e, sq)}></BlogList>
-                    firstFlag = false;
-                    setSelectedPost(blog.BLOG_SQ);
+            if(!isLogined) {
+                for(let i = 0; i < result.length; i++) {
+                    let blog = result[i];
+                    if(blog.TITLE == "Hi there!") {
+                        let _blog = <BlogList key={idx++} content={blog.TITLE} date={blog.DATE} sq={blog.BLOG_SQ} className='posting' onClick={(e, sq) => onTitleClick(e, sq)}></BlogList>    
+                        if(firstFlag && !selectedPostDom) {
+                            console.log("자동 선택");
+                            _blog = <BlogList className="posting selected-post" key={idx++} content={blog.TITLE} date={blog.DATE} sq={blog.BLOG_SQ} onClick={(e, sq) => onTitleClick(e, sq)}></BlogList>
+                            firstFlag = false;
+                            setSelectedPost(blog.BLOG_SQ);
+                        }
+                        _blogArr.push(_blog);
+                        break;
+                    }
                 }
-                _blogArr.push(_blog);
-            });
-            console.log(_blogArr[0]);
+            } else {
+                for(let i = 0; i < result.length; i++) {
+                    let blog = result[i];
+                    if(blog.TITLE == "Hi there!") continue;
+                    let _blog = <BlogList key={idx++} content={blog.TITLE} date={blog.DATE} sq={blog.BLOG_SQ} className='posting' onClick={(e, sq) => onTitleClick(e, sq)}></BlogList>
+                    if(firstFlag && !selectedPostDom) {
+                        console.log("자동 선택");
+                        _blog = <BlogList className="posting selected-post" key={idx++} content={blog.TITLE} date={blog.DATE} sq={blog.BLOG_SQ} onClick={(e, sq) => onTitleClick(e, sq)}></BlogList>
+                        firstFlag = false;
+                        setSelectedPost(blog.BLOG_SQ);
+                    }
+                    _blogArr.push(_blog);
+                }
+                console.log(_blogArr[0]);
+            }
             setBlogArr(_blogArr);
         });
     }
@@ -62,8 +82,15 @@ function Blog(props) {
             if(res.data != "" && res.data.name == 'MASTER') {
                 setNewPost(<BlogList className='new' onClick={() => writeNewPosting()} content={' + '+_content} />);
             }
+            if(res.data != "" && res.data.name) {
+                isLogined = true;
+            } else isLogined = false;
         });
         getList();
+        return (() => {
+            selectedPostDom = null;
+            newFlag = false;
+        });
     }, []);
 
     useEffect(() => {

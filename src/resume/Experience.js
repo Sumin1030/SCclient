@@ -9,17 +9,34 @@ function Experience () {
             <Back />
             <div className="title">Puzzle Data</div>
             <div className="company-description">
-                B2B solution start-up company.<br />
-                Offering a process analysis solution that uses process mining techniques to analyze customer behavior patterns and uncover insights.
+                A B2B solution start-up company specializing in process analysis solutions leveraging process mining techniques to analyze customer behavior patterns and uncover insights.
             </div>
             <div className="summary">
+                <div className="summary-title">
+                    Technologies Used
+                </div>
+                <div className='summary-content'>
+                    <span className="dot">•</span>
+                    <span className="content">JavaScript: Utilized an in-house framework with Redux for front-end development.</span>
+                </div>
+                <div className='summary-content'>
+                    <span className="dot">•</span>
+                    <span className="content">Java: Employed Spring and Mybatis frameworks with PostgreSQL for back-end development.</span>
+                </div>
+            </div>
+            <div className="summary">
+                <div className="summary-title">
+                    Role
+                </div>
                 <div className='summary-content'>
                     <span className="dot">•</span>
                     <span className="content">Contributed to the development of APIs for visualizing analytical tools in the back-end.</span>
                 </div>
                 <div className='summary-content'>
                     <span className="dot">•</span>
-                    <span className="content">Took a significant role in front-end development by developing a real-time dashboard, while also contributing to the development of two visualizing analytical tools as a member of the team.</span>
+                    <span className="content">
+                        Played a significant role in front-end development, creating a real-time dashboard, and contributing to the development of two visualizing analytical tools as a team member.
+                    </span>
                 </div>
             </div>
             <div className="detail">
@@ -28,8 +45,8 @@ function Experience () {
                 </div>
                 <img className="work-image 1" src={pz1}></img>
                 <div className="explanation">
-                    Dashboard 전체를 구현함. 표준모델을 설정하여, 실시간 분석을 했을 때 표준값에서 벗어나는 사항들을 실시간으로 확인할 수 있음.
-                    설정한 시간마다 분석 결과를 새롭게 보여주며, 서버에서 데이터를 불러오는 간격, 화면이 새로 refresh 되는 간격을 설정할 수 있음.
+                    Developed the entire real-time dashboard in the front-end. Enabled real-time monitoring of events that fall outside predefined ranges based on a standard model.<br />
+                    Implemented features to customize interval time for data retrieval from the server and monitor refresh time.
                 </div>
             </div>
             <div className="detail">
@@ -38,8 +55,8 @@ function Experience () {
                 </div>
                 <img className="work-image 2" src={pz2}></img>
                 <div className="explanation">
-                    이미 구현되어 있는 Map 코드를 부모로 해서 Comparison Frequency Map을 구현.
-                    사용자가 보기 편하도록 Map이 그려지는 로직을 재구성하였음.
+                    Developed the Comparison Frequency Map Analysis based on Map analysis.<br />
+                    Rewrote the logic for drawing maps specific to this tool.
                 </div>
             </div>
             <div className="detail">
@@ -48,9 +65,9 @@ function Experience () {
                 </div>
                 <img className="work-image 3" src={pz3}></img>
                 <div className="explanation">
-                    KPI 분석 api 구현.
-                    케이스 수, 이벤트 수, 케이스 리드타임, working time 등의 합계, 평균, 중앙값 등을 다양한 옵션을 적용하여 구할 수 있도록 구현하였다.
-                    옵션 : 특정 범위에 한하게 하거나, 특정 이벤트를 포함/비포함 시킨 결과만 구한다던가 등등.
+                    Developed APIs for KPI analysis tools.<br />
+                    Enabled users to analyze key performance indicators such as the number of cases or events, and calculate metrics like sum, average, and median of lead time or working time.<br />
+                    Implemented various options for customization, including setting limitations on ranges and including/excluding specific events or workers.
                 </div>
             </div>
         </div>

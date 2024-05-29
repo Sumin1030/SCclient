@@ -31,7 +31,7 @@ import Login from './Login';
 import language from "../util/LanguageUtil";
 import { useSelector, useDispatch } from 'react-redux';
 import { languageActions } from '../store/languageSlice';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
 import Works from "../resume/Works";
 import Experience from "../resume/Experience";
 import Project from "../resume/Project";
@@ -81,7 +81,7 @@ function App() {
 
   return (
     <div className="app">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path='/resume' element={<About />}></Route>
           <Route path='/resume/works' element={<Works />}></Route>
@@ -89,7 +89,7 @@ function App() {
           <Route path='/resume/works/project' element={<Project />}></Route>
           <Route path='/' element={content}></Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
   // return <Calander />
