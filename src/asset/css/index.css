@@ -226,7 +226,9 @@ html, body {
 }
 
 .d-day .country {
-  font-size: 120pt;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 120px;
   letter-spacing: 8pt;
   height: 50%;
 }
@@ -282,6 +284,11 @@ html, body {
   height: 50%;
 }
 
+.d-day .secondRow .date {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .d-day .secondRow .flag {
   width: 27%;
   font-size: 0.12vw;
@@ -323,6 +330,7 @@ html, body {
   position: absolute;
   height: 40px;
   padding: 5px;
+  z-index: 1;
 }
 
 .main-setting, .toppost {
@@ -1211,4 +1219,68 @@ html, body {
 
 .blog-text-area:hover .blog-write-content-input{
   background-color: rgba(146, 146, 146, 0.276);
+}
+
+
+@media screen and (max-width:1023px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  .main *:not(.close-btn, .main-setting, .toppost, .gb-name, .gb-date, .guest-book-outer, .guest-book-inner, .guest-book-contents) {
+    overflow: visible;
+    width: 100%;
+    height: auto;
+  }
+
+  .time-title {
+    font-size: 8vw;
+  }
+  .today-time {
+    font-size: 7vw;
+  }
+
+  .info .visitor, .grass, .gb-depth, .from-host, .top-post, .main-bottom{
+    display: none;
+  }
+
+  .user-title {
+    font-size: 5vw;
+  }
+
+  .user {
+    font-size: 3vw;
+  }
+  .gb-date{
+    width: 30%;
+  }
+  .gb-name {
+    width: 20%;
+  }
+
+  .guest-book-content {
+    font-size: 3vw;
+  }
+
+  .gb-content {
+    max-width: 50%;
+  }
+
+  .main-right {
+    display: flex;
+    min-height:auto;
+  }
+
+  .guest-book-outer {
+    height: 400px;
+    min-height: auto;
+  }
+
+  .login-prompt {
+    min-width: 80%;
+    width: 80%;
+  }
+
 }

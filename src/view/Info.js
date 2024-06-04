@@ -27,7 +27,7 @@ function Info(props) {
         };
         // 로그인 시 utc 기준으로 로그 쌓음
         // 현재 날짜의 00시를 utc기준으롤 바꾸어 파라미터 구성
-        const _t = DateUtil.getUtc(`${curr.getFullYear()}-${curr.getMonth()+1}-${curr.getDate()}`);
+        const _t = DateUtil.getUtc(`${curr.getFullYear()}-${curr.getMonth()+1}-${curr.getDate()} ${curr.getHours()}:${curr.getMinutes()}`);
         const today = DateUtil.getDate(_t, "desc");
         axios.get(`/api/getVisits?today=${today}`).then((res)=>{
             const result = res.data.result;

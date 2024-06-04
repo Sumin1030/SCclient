@@ -74,7 +74,9 @@
     padding: 50px;
     padding-top: 90px;
     width: auto;
-    height: calc(100% - 140px);
+    height: calc(100% - 190px);
+    overflow-y: scroll;
+    margin-bottom: 50px;
   }
   
   .resume.resume-works, .resume.works {
@@ -157,7 +159,7 @@
     color: white;
     /* border: 5px solid rgb(125, 78, 235); */
     border-radius: 50px;
-    font-size: 45px;
+    font-size: 30px;
   }
   
   .resume-left .buttons .first-line-btns {
@@ -245,7 +247,7 @@
   }
   
   .info-board .txt-default {
-    font-size: 80px;
+    font-size: 40px;
   }
   
   /********** scroll-bar **************/
@@ -290,7 +292,7 @@
   .info-board .txt-skill{
     display: flex;
     flex-direction: column;
-    font-size: 200%;
+    font-size: 30pt;
   }
   
   .info-board .txt-skill > * {
@@ -312,6 +314,7 @@
   .info-board .txt-skill label.title {
     display: inline-block;
     width: 30%;
+    margin-right: 30px;
   }
   
   .info-board .txt-skill .skill.even *{
@@ -343,7 +346,7 @@
   }
   
   .info-board .txt-info label.title {
-    font-size: 60px;
+    font-size: 35px;
     width: 20%;
     color: rgb(205, 125, 242); 
   }
@@ -354,7 +357,7 @@
   }
   
   .info-board .txt-info label.content.second {
-    font-size: 120%;
+    font-size: 20pt;
     color: skyblue;
   }
   
@@ -412,8 +415,12 @@
   }
 
   .resume.works {
-    font-size: 50px;
+    font-size: 30px;
     color: white;
+  }
+
+  .resume.works .detail-title {
+    font-size: 35px;
   }
 
   .resume.works .summary-title {
@@ -448,6 +455,7 @@
 
   .resume.works .project-link {
     margin-top: 40px;
+    margin-bottom: 40px;
     text-align: center;
     font-style: italic;
     color: white;
@@ -508,14 +516,26 @@
     }
   
     .resume-right .info-board {
-      height: 420px;
+      /* height: 420px; */
+      height: auto;
       /* width: 400px; */
       /* margin-top: 0; */
-      font-size: 30px;
+      font-size: 20px;
     }
   
+    .info-board .scroll.visible {
+      scrollbar-width: none;
+    }
     .info-board .txt-info label.title {
-      font-size: 30px;
+      font-size: 20px;
+    }
+
+    .info-board .txt-info label:not(.info-board-title) {
+      width: auto;
+    }
+
+    .info-board .info-label {
+      justify-content: space-evenly;
     }
   
     .resume-right {
@@ -523,12 +543,16 @@
     }
   
     .txt-skill *{
-      font-size: 30px;
+      font-size: 23px;
     }
   
     .info-board label.info-board-title {
       padding-bottom: 30px;
-      font-size: 30pt;
+      font-size: 20pt;
+    }
+
+    .info-board .txt-info label.content.second {
+      font-size: 20px;
     }
   
     .resume-left .first-line-btns {
@@ -554,6 +578,7 @@
       font-size: 30pt;
       text-align: center;
       padding-left: 0;
+      z-index: 1;
     }
   
     .resume-works .title {
@@ -565,8 +590,9 @@
     }
   
     .resume.resume-works, .resume.works {
-      padding-left: 0;
+      /* padding-left: 0; */
       padding-top: 150px;
+      text-align: center;
     }
   
     .resume-works label.work-experience, .resume-works label.project {
@@ -578,6 +604,21 @@
     .info-board .txt-default {
       font-size: 19pt;
     }
+
+    .resume.works, .resume.works .company-description, .resume.works .project-summary, .resume.works .summary {
+      font-size: 20px;
+    }
+
+    .resume.works .detail-title, .resume.works .summary-title {
+      font-size: 25px;
+    }
+
+    .resume.works .work-image, .resume.works .project_img {
+      position: relative;
+      max-width: 120%;
+      left: -10%;
+    }
+  }
   
     @media screen and (max-width:800px) {
       .resume-left .title .name {
@@ -587,5 +628,3 @@
         font-size: 40px;
       }
     }
-  
-  }

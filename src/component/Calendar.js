@@ -141,7 +141,7 @@ function Calendar() {
     }
 
     useEffect(()=> {
-        axios.get(`/api/getContribution?date=${start.getFullYear()}-${start.getMonth()}-${start.getDate()}`).then((res) => {
+        axios.get(`/api/getContribution?date=${start.getFullYear()}-${start.getMonth()}-${start.getDate()} ${start.getHours()}: ${start.getMinutes()}`).then((res) => {
             contribution = res.data;
             makeTable();
         });

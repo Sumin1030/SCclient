@@ -43,6 +43,12 @@ function MainPage(props) {
         //     </div>
         // </div>
         <div className="main">
+            <div className='langBtn'>
+                <Setting/>
+                <button className='toppost'>
+                    <div className="logout-btn" onClick={logout}>{useTranslator("mainPage.logout")}</div>
+                </button>
+            </div>
             <div className="main-left">
                 <Info/>
             </div>
@@ -53,12 +59,6 @@ function MainPage(props) {
                 </div>
             </div>    
             <div className="main-right">
-                <div className='langBtn'>
-                    <Setting/>
-                    <button className='toppost'>
-                        <div className="logout-btn" onClick={logout}>{useTranslator("mainPage.logout")}</div>
-                    </button>
-                </div>
                 <GuestBook/>
                 <TopPost/>
             </div>

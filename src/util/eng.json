@@ -46,11 +46,12 @@
         "noID": "No such ID",
         "rewriteID": "ID has to be more than 5 letters",
         "rewriteAnswer": "Wrong Answer",
-        "completeSignUp": "Complete! Sign in now.",
+        "completeSignUp": "Sign-up complete! \n Please wait for account confirmation from the owner.",
         "failSignUp": "Fail to Sign up. Try again.",
         "yes": "CONTINUE WITH THIS INFORMATION",
         "rewrite": "REWRITE INFORMATION",
         "login": "LOGIN",
-        "permissionDenied": "No Permission. Sign In."
+        "permissionDenied": "No Permission. Sign In.",
+        "noPermission": "Your account is not yet confirmed. \n Please wait for the owner to confirm your account."
     }
 }

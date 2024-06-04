@@ -51,7 +51,8 @@
         "yes": "입력된 정보로 가입 진행",
         "rewrite": "다시 입력",
         "login": "로그인하기",
-        "permissionDenied": "권한이 없습니다. 로그인 해주세요."
+        "permissionDenied": "권한이 없습니다. 로그인 해주세요.",
+        "noPermission": "사이트의 주인이 아직 수락하지 않았습니다."
     }
 
 }

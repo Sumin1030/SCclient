@@ -32,6 +32,7 @@ function Login(props) {
     const rewriteAnsr = `\n${_rewriteAnsr}\n${typeOption}`;
     const completeSignUp = useTranslator("login.completeSignUp");
     const failSignUp = useTranslator("login.failSignUp");
+    const noPermission = useTranslator("login.noPermission");
     
     const currentText = useRef(sayHi);
     const isSignUp = useRef(false);
@@ -153,9 +154,14 @@ ${typeOption}`,
                     loginId = txt;
                     axios.get(`/api/getId?id=${loginId}`).then((res)=>{
                         if (res.data.result.length > 0) {
-                            setTitle(PW);
-                            loginPw = res.data.result[0].PW;
-                            loginName = res.data.result[0].NAME;
+                            console.log(res.data);
+                            if(res.data.result[0].CONFIRMED == 1) {
+                                setTitle(PW);
+                                loginPw = res.data.result[0].PW;
+                                loginName = res.data.result[0].NAME;
+                            } else {
+                                changeCurrentText(noPermission, false);
+                            }
                         } else {
                             changeCurrentText(noID, false);
                         }   
