@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Sumin In Canada - Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ✏️ 프로젝트 소개
+  해외생활을 하는 사람들 중 기존의 블로그나 sns등 공개된 공간을 원하지 않는 사람들을 위한 가족,친구와 소통할 수 있는 사이트입니다.   
+  관리자가 허용한 사람만 로그인이 가능하며, 메인페이지에서 해커의 대시보드가 연상되는 비밀스러운 컨셉의 사이트입니다.
 
-## Available Scripts
+## 🗓 개발 기간
+  * 2023.09 ~ 2024.04
+  
+## 💡 주요 기능
+* 소통을 위한 기능 및 메인화면 대시보드를 구성하는 기능들
+   * 답글의 depth가 무제한인 방명록
+   * 블로그 글 작성(사진 업로드 가능) 및 댓글 기능
+   * 영어 지원 기능
+   * 방문자 확인 두 가지 그래프(지난 5일 / 1년)   
+   
+## 🔨 기술 스택
+  * Javascript
+  * React
+  * Redux
+   
+   
+## 🖥 화면 구성(제목 클릭 시 코드 링크로 이동)
 
-In the project directory, you can run:
+* ### <a href="https://github.com/Sumin1030/SCclient/blob/master/src/view/Login.js">로그인<a/>
+  <img src="https://github.com/user-attachments/assets/a2e26fe6-46b2-4708-b127-d4dade3db713" width="90%" title="로그인"></img>
 
-### `npm start`
+* ### <a href="https://github.com/Sumin1030/SCclient/blob/master/src/view/MainPage.js">메인화면<a/>
+  <img src="https://github.com/user-attachments/assets/d28a39c9-158f-42f5-85ef-830df5bca3f6" width="90%" title="메인화면"></img>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* ### <a href="https://github.com/Sumin1030/SCclient/blob/master/src/view/GuestBook.js">방명록<a/>
+  ![pj_guestbook](https://github.com/user-attachments/assets/057869d5-4451-475f-b38d-ababccaebe1f)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* ### <a href="https://github.com/Sumin1030/SCclient/blob/master/src/view/Blog.js">블로그 포스팅<a/>
+  <img src="https://github.com/user-attachments/assets/61501248-6d33-4466-99cb-257002ed1ea3" width="90%" title="블로그포스팅"></img>
 
-### `npm test`
+* ### <a href="https://github.com/Sumin1030/SCclient/blob/master/src/component/Calendar.js">방문자 수 그래프<a/>
+  ![calendar](https://github.com/user-attachments/assets/5928cc54-9632-40bf-9bc6-8a744e2ecaa7)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
